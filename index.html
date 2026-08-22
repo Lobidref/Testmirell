@@ -1502,7 +1502,7 @@
       </div>
       <div class="prog">
         <div class="prog-row"><span class="prog-time t-vr">Ochtend<br>&amp; middag</span><div class="prog-name"><a href="https://moveforfun.nl" target="_blank" rel="noopener noreferrer">Speel &amp; Spel Spektakel</a><small>Move For Fun · leuke en actieve spellen voor alle leeftijden — gratis!</small></div><span class="prog-tag tag-kids">Kids</span></div>
-        <div class="prog-row"><span class="prog-time t-vr">13:30–15:30</span><div class="prog-name"><a href="https://www.irma-mode.nl" target="_blank" rel="noopener noreferrer">Modeshow Irma Mode</a><small>De nieuwste collecties op het podium</small></div><span class="prog-tag tag-show">Show</span></div>
+        <div class="prog-row"><span class="prog-time t-vr">14:00</span><div class="prog-name"><a href="https://www.irma-mode.nl" target="_blank" rel="noopener noreferrer">Modeshow Irma Mode</a><small>De nieuwste collecties op het podium</small></div><span class="prog-tag tag-show">Show</span></div>
         <div class="prog-row"><span class="prog-time t-vr">15:30–01:00</span><div class="prog-name"><a href="https://www.feestdjwesley.nl" target="_blank" rel="noopener noreferrer">Feest DJ Wesley</a></div><span class="prog-tag tag-dj">DJ</span></div>
         <div class="prog-row"><span class="prog-time t-vr">16:30–17:00</span><div class="prog-name">Diva Turner<small>Bekend van The Tribute Battle · 1e set</small></div><span class="prog-tag tag-show">Show</span></div>
         <div class="prog-row"><span class="prog-time t-vr">17:45–18:15</span><div class="prog-name">Diva Turner<small>2e set</small></div><span class="prog-tag tag-show">Show</span></div>
@@ -1517,7 +1517,8 @@
       </div>
       <div class="prog">
         <div class="prog-row"><span class="prog-time t-za">Ochtend<br>&amp; middag</span><div class="prog-name"><a href="https://moveforfun.nl" target="_blank" rel="noopener noreferrer">Speel &amp; Spel Spektakel</a><small>Move For Fun · leuke en actieve spellen voor alle leeftijden — gratis!</small></div><span class="prog-tag tag-kids">Kids</span></div>
-        <div class="prog-row"><span class="prog-time t-za">13:30–15:30</span><div class="prog-name"><a href="https://www.irma-mode.nl" target="_blank" rel="noopener noreferrer">Modeshow Irma Mode</a><small>De nieuwste collecties op het podium</small></div><span class="prog-tag tag-show">Show</span></div>
+        <div class="prog-row"><span class="prog-time t-za">12:45</span><div class="prog-name"><a href="https://www.irma-mode.nl" target="_blank" rel="noopener noreferrer">Modeshow Irma Mode</a><small>Eerste show — de nieuwste collecties op het podium</small></div><span class="prog-tag tag-show">Show</span></div>
+        <div class="prog-row"><span class="prog-time t-za">14:15</span><div class="prog-name"><a href="https://www.irma-mode.nl" target="_blank" rel="noopener noreferrer">Modeshow Irma Mode</a><small>Tweede show</small></div><span class="prog-tag tag-show">Show</span></div>
         <div class="prog-row"><span class="prog-time t-za">15:30–19:30</span><div class="prog-name">DJ Martin Five</div><span class="prog-tag tag-dj">DJ</span></div>
         <div class="prog-row"><span class="prog-time t-za">16:30–18:30</span><div class="prog-name">The Scientist<small>Coldplay tribute</small></div><span class="prog-tag tag-tribute">Tribute</span></div>
         <div class="prog-row"><span class="prog-time t-za">19:30–01:00</span><div class="prog-name">DJ Mike Laros</div><span class="prog-tag tag-dj">DJ</span></div>
@@ -1569,10 +1570,9 @@
             </a>
           </noscript>
         </div>
-        <p class="kids-video-note">
-          Speelt automatisch af zonder geluid — klik op het geluidsicoon voor geluid.
-          <a href="https://youtu.be/Bpli_2gCGlc" target="_blank" rel="noopener noreferrer">Openen op YouTube</a>
-        </p>
+        <!-- Alleen zichtbaar als de pagina lokaal (file://) geopend wordt;
+             online speelt de video gewoon af en blijft dit leeg. -->
+        <p class="kids-video-note" hidden></p>
       </div>
     </div>
   </div>
@@ -1704,12 +1704,13 @@
 <section id="irmmode">
   <div class="irma-inner">
     <div class="irma-content">
-      <div class="eyebrow">Vrijdag &amp; Zaterdag · 13:30–15:30</div>
+      <div class="eyebrow">Vrijdag &amp; Zaterdag · drie shows</div>
       <h2>Modeshow<br>Irma Mode</h2>
-      <p>Op vrijdag 28 en zaterdag 29 augustus presenteert <strong style="color:white">Irma Mode</strong> een prachtige modeshow op het Wilhelminaplein. De nieuwste collecties komen tot leven in een unieke sfeer, midden op het festival. Een schitterend spektakel voor jong en oud!</p>
+      <p>Op vrijdag 28 en zaterdag 29 augustus presenteert <strong style="color:white">Irma Mode</strong> prachtige modeshows op het Wilhelminaplein. Vrijdag om 14:00 uur, zaterdag twee keer: om 12:45 en om 14:15 uur. De nieuwste collecties komen tot leven midden op het festival — een schitterend spektakel voor jong en oud!</p>
       <div class="irma-days">
-        <div class="irma-day">Vr 28 aug · 13:30–15:30</div>
-        <div class="irma-day">Za 29 aug · 13:30–15:30</div>
+        <div class="irma-day">Vr 28 aug · 14:00</div>
+        <div class="irma-day">Za 29 aug · 12:45</div>
+        <div class="irma-day">Za 29 aug · 14:15</div>
       </div>
       <a href="https://www.irma-mode.nl" target="_blank" rel="noopener" class="irma-cta">
         Ontdek Irma Mode
@@ -2402,10 +2403,13 @@
 
     if (LOKAAL) {
       toonThumbnail(wrap);
-      if (note) note.innerHTML =
-        'Klik om de video op YouTube te bekijken. ' +
-        '<small style="display:block;margin-top:4px;opacity:0.7">' +
-        'Zodra de site online staat speelt hij hier automatisch af.</small>';
+      if (note) {
+        note.hidden = false;
+        note.innerHTML =
+          'Klik om de video op YouTube te bekijken. ' +
+          '<small style="display:block;margin-top:4px;opacity:0.7">' +
+          'Zodra de site online staat speelt hij hier automatisch af.</small>';
+      }
       return;
     }
     // Online: laden zodra de sectie in beeld komt
