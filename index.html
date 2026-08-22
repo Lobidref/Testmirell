@@ -1086,6 +1086,174 @@
       .footer-top { grid-template-columns: 1fr; gap: 30px; }
     }
 
+    /* ==========================================================
+       MOBIEL — alles onder 900px
+    ========================================================== */
+
+    /* ---- Navigatie: uitklapmenu ---- */
+    @media (max-width: 1080px) {
+      .hamburger { display: flex; }
+      .nav-wrap { padding: 0 16px; }
+      .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; gap: 0;
+        background: var(--dark);
+        border-bottom: 3px solid var(--lime);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.32s ease;
+      }
+      .nav-links.open { max-height: 80vh; overflow-y: auto; }
+      .nav-links li { border-top: 1px solid rgba(255,255,255,0.07); }
+      .nav-links li:first-child { border-top: none; }
+      .nav-links a {
+        display: block; padding: 15px 20px; font-size: 14.5px;
+        border-radius: 0; color: rgba(255,255,255,0.82);
+      }
+      .nav-cta { background: transparent !important; color: var(--lime) !important; font-weight: 800; }
+      .nav-date { display: none; }
+      #nav { position: fixed; }
+    }
+
+    @media (max-width: 560px) {
+      .nav-v2-badge { padding: 4px 9px 4px 8px; gap: 7px; }
+      .nav-v2-wplein { font-size: 14px; }
+      .nav-v2-right { padding-left: 7px; }
+      .nav-v2-right span { font-size: 6px; letter-spacing: 1.1px; }
+    }
+
+    /* ---- Algemene ruimte ---- */
+    @media (max-width: 768px) {
+      section { padding: 54px 18px; }
+      .section-head { margin-bottom: 34px; }
+      .section-desc { font-size: 14px; }
+      .wrap { padding: 0; }
+    }
+
+    /* ---- Hero ---- */
+    @media (max-width: 768px) {
+      #hero { padding: 0 18px 56px; min-height: 92vh; }
+      .v2-badge { margin-bottom: 22px; }
+      .v2-badge-inner { padding: 13px 16px 13px 15px; gap: 11px; border-width: 2.5px; }
+      .v2-right { padding-left: 11px; border-left-width: 2px; }
+      .hero-date-pill { font-size: 12px; letter-spacing: 1.2px; padding: 8px 18px; }
+      .hero-place { font-size: 11px; letter-spacing: 2px; margin-bottom: 26px; }
+      .countdown { gap: 8px; margin-bottom: 30px; }
+      .cd-val { min-width: 0; padding: 11px 0; width: 100%; font-size: clamp(1.5rem, 7vw, 2.2rem); }
+      .cd-item { flex: 1 1 0; min-width: 0; }
+      .cd-label { font-size: 9px; letter-spacing: 1.2px; }
+      .hero-btns { flex-direction: column; gap: 10px; }
+      .hero-btns .btn { width: 100%; justify-content: center; }
+      .scroll-cue { display: none; }
+    }
+
+    /* ---- Programma ---- */
+    @media (max-width: 768px) {
+      .day-tabs { gap: 6px; margin-bottom: 26px; }
+      .day-tab { font-size: 12px; padding: 9px 14px; flex: 1 1 auto; }
+      .prog-row {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "tijd tag" "naam naam";
+        gap: 8px 12px; padding: 14px;
+      }
+      .prog-time { grid-area: tijd; font-size: 12px; }
+      .prog-time br { display: none; }
+      .prog-tag  { grid-area: tag; justify-self: end; }
+      .prog-name { grid-area: naam; font-size: 14px; }
+      .prog-stage-note { font-size: 10px; letter-spacing: 0.9px; }
+      .prog-sub-row { flex-wrap: wrap; font-size: 12px; }
+      .prog-sub-row b { min-width: 74px; font-size: 10.5px; }
+      .day-head h3 { font-size: 17px; }
+    }
+
+    /* ---- Irma & webcam ---- */
+    @media (max-width: 768px) {
+      .irma-inner, .cam-inner { grid-template-columns: 1fr; }
+      .irma-content, .cam-content { padding: 40px 20px; }
+      .irma-content p, .cam-content p { max-width: 100%; font-size: 14px; }
+      .irma-visual, .cam-visual { min-height: 250px; padding: 30px 20px; }
+      .irma-cta, .cam-cta { align-self: stretch; justify-content: center; }
+      .irma-days { gap: 8px; }
+      .irma-day { font-size: 11px; padding: 6px 11px; }
+    }
+
+    /* ---- Plattegrond ---- */
+    @media (max-width: 768px) {
+      .map-frame { border-width: 5px; border-radius: 12px; }
+      .map-actions { flex-direction: column; }
+      .map-btn { width: 100%; justify-content: center; }
+      .map-lightbox { padding: 12px; }
+      .map-lightbox-close { top: 10px; right: 12px; }
+    }
+
+    /* ---- Foto's ---- */
+    @media (max-width: 560px) {
+      .collage { grid-auto-rows: 108px; gap: 7px; }
+      .col-ov { opacity: 1; background: linear-gradient(to top, rgba(26,26,26,0.75) 0%, transparent 46%); }
+      .col-ov span { font-size: 10.5px; }
+    }
+
+    /* ---- Partners ---- */
+    @media (max-width: 768px) {
+      .partner-grid { grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 7px; }
+      .partner { min-height: 74px; padding: 13px 11px; }
+      .partner img { max-height: 38px; opacity: 0.78; }
+      .partner-dank { padding: 17px 18px; font-size: 13px; }
+    }
+
+    /* ---- FAQ ---- */
+    @media (max-width: 768px) {
+      .faq-item summary { padding: 15px 40px 15px 16px; font-size: 13.5px; }
+      .faq-body { padding: 0 16px 17px; }
+      .faq-body p { font-size: 13px; }
+    }
+
+    /* ---- Praktische info ---- */
+    @media (max-width: 768px) {
+      .info-grid { grid-template-columns: 1fr; gap: 14px; }
+      .info-card { padding: 22px 18px; }
+      .travel { margin-top: 42px; }
+      .travel-head { margin-bottom: 24px; }
+      .travel-card { padding: 22px 18px; }
+      .travel-cta, .route-btn { width: 100%; justify-content: center; }
+      .bus-line { font-size: 12px; }
+      .bike-spot { padding: 12px 13px; }
+    }
+
+    /* ---- Huisregels ---- */
+    @media (max-width: 768px) {
+      .regels-intro { padding: 17px 18px; margin-bottom: 28px; }
+      .regels-intro p { font-size: 13.5px; }
+      .regel { padding: 18px 16px; gap: 13px; }
+      .regel-ic, .regel-ic svg { width: 38px; height: 38px; }
+      .regel-txt h3 { font-size: 14px; }
+    }
+
+    /* ---- Kids / video ---- */
+    @media (max-width: 768px) {
+      #kids { padding: 48px 18px; }
+      .kids-pills { gap: 7px; }
+      .kids-pill { font-size: 11px; padding: 6px 11px; }
+      .kids-cta { width: 100%; justify-content: center; }
+    }
+
+    /* ---- Nieuws ---- */
+    @media (max-width: 768px) {
+      .news-grid { grid-template-columns: 1fr; gap: 12px; }
+      .news-card { padding: 20px 18px; }
+    }
+
+    /* ---- Footer ---- */
+    @media (max-width: 768px) {
+      footer { padding: 42px 18px 22px; }
+      .footer-top { gap: 26px; padding-bottom: 26px; }
+      .footer-bottom { font-size: 11.5px; }
+    }
+
+    /* Voorkom horizontale schuifbalk op elk formaat */
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img, svg, iframe { max-width: 100%; }
+
     /* ====== PROGRAM ARTIST LINKS ====== */
     .prog-name a {
       color: white;
