@@ -1,0 +1,2288 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feestweek Naaldwijk 2026 — Wilhelminaplein</title>
+  <meta name="description" content="Feestweek Naaldwijk 2026 — 26 t/m 29 augustus op het Wilhelminaplein. Gezellig Westlands feesten. Gratis toegang.">
+
+  <!-- Wilhelmina-silhouet als browsericoon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <meta name="theme-color" content="#2D5C1A">
+
+  <!-- Voorvertoning bij delen via WhatsApp, Facebook en X -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Feestweek Naaldwijk">
+  <meta property="og:title" content="Feestweek Naaldwijk 2026 — Wilhelminaplein">
+  <meta property="og:description" content="26 t/m 29 augustus op het Wilhelminaplein in Naaldwijk. Vier dagen live muziek, modeshows en feest. Gratis toegang.">
+  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="nl_NL">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ====== BRAND COLORS (officieel 2026 palet) ====== */
+    :root {
+      --lime:     #8DC63F;
+      --lime-d:   #6EA028;
+      --cream:    #E5ECC0;
+      --pink:     #E84068;
+      --pink-d:   #C42850;
+      --orange:   #E06830;
+      --orange-d: #B84818;
+      --teal:     #5AACBC;
+      --teal-d:   #3A8898;
+      --purple:   #8840A8;
+      --purple-d: #622880;
+      --forest:   #2D5C1A;
+      --dark:     #1A1A1A;
+      --mid:      #242424;
+      --gray:     #5A5A5A;
+      --muted:    #8A8A8A;
+      --light:    #F6F5EF;
+      --white:    #FFFFFF;
+      --border:   #E2DDD5;
+    }
+
+    html { scroll-behavior: smooth; }
+    /* Alleen voor schermlezers en zoekmachines — visueel afwezig */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+    /* Ankerlinks niet onder de vaste navbar (62px) laten vallen */
+    section[id], footer[id] { scroll-margin-top: 78px; }
+    body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ====== ZEBRA STRIPES ====== */
+    .zebra {
+      height: 20px;
+      background-image: repeating-linear-gradient(-45deg,
+        var(--lime) 0, var(--lime) 12px,
+        var(--lime-d) 12px, var(--lime-d) 24px);
+    }
+    .zebra.pink { background-image: repeating-linear-gradient(-45deg, var(--pink) 0, var(--pink) 12px, var(--pink-d) 12px, var(--pink-d) 24px); }
+    .zebra.orange { background-image: repeating-linear-gradient(-45deg, var(--orange) 0, var(--orange) 12px, var(--orange-d) 12px, var(--orange-d) 24px); }
+    .zebra.teal { background-image: repeating-linear-gradient(-45deg, var(--teal) 0, var(--teal) 12px, var(--teal-d) 12px, var(--teal-d) 24px); }
+
+    /* ====== NAVBAR ====== */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--dark);
+      border-bottom: 3px solid var(--lime);
+      transition: box-shadow 0.3s;
+    }
+    .nav-wrap {
+      max-width: 1240px; margin: 0 auto; padding: 0 24px;
+      height: 62px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; }
+
+    /* V2 typografie-badge — compact versie voor nav */
+    .nav-v2-badge {
+      display: flex; align-items: center; gap: 9px;
+      background: var(--cream);
+      border: 2px solid var(--lime);
+      border-radius: 8px;
+      padding: 5px 11px 5px 9px;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .nav-v2-badge:hover { border-color: var(--lime-d); box-shadow: 0 2px 12px rgba(141,198,63,0.3); }
+    .nav-v2-wplein {
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 17px; line-height: 0.9;
+      color: var(--forest); text-transform: uppercase; letter-spacing: -0.5px;
+    }
+    .nav-v2-right {
+      display: flex; flex-direction: column; gap: 0;
+      border-left: 1.5px solid var(--lime);
+      padding-left: 9px;
+    }
+    .nav-v2-right span {
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 7px; color: var(--forest);
+      letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.55;
+    }
+    .nav-date { background: var(--orange); color: white; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11px; letter-spacing: 1.5px; padding: 4px 11px; border-radius: 50px; }
+
+    .nav-links { display: flex; list-style: none; gap: 2px; }
+    .nav-links a { color: rgba(255,255,255,0.65); font-size: 12px; font-weight: 600; letter-spacing: 0.3px; padding: 7px 12px; border-radius: 5px; transition: all 0.18s; }
+    .nav-links a:hover { color: white; background: rgba(255,255,255,0.08); }
+    .nav-cta { background: var(--pink) !important; color: white !important; }
+    .nav-cta:hover { background: var(--pink-d) !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: white; border-radius: 2px; }
+
+    /* ====== HERO ====== */
+    #hero {
+      min-height: 100vh; position: relative;
+      display: flex; align-items: flex-end; justify-content: center;
+      overflow: hidden; padding: 0 24px 80px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('fotos/DX4A4634_MabelBohms.jpg');
+      background-size: cover; background-position: center 30%;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(26,26,26,0.15) 0%,
+        rgba(26,26,26,0.35) 45%,
+        rgba(26,26,26,0.82) 72%,
+        rgba(26,26,26,0.96) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; max-width: 840px; width: 100%;
+    }
+
+    /* Real logo in hero */
+    .hero-logo-wrap {
+      display: inline-flex; flex-direction: column; align-items: center; margin-bottom: 30px;
+    }
+    .hero-logo-img {
+      height: 68px; width: auto;
+      /* "logo boven elkaar" variant — invert for use on dark */
+      filter: invert(1) drop-shadow(0 4px 20px rgba(0,0,0,0.6));
+    }
+    .hero-tagline-sub {
+      font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.45);
+      margin-top: 10px;
+    }
+
+    .hero-date-pill {
+      display: inline-block; background: var(--orange); color: white;
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 14px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 9px 26px; border-radius: 50px; margin-bottom: 14px;
+    }
+    .hero-place {
+      font-family: 'Montserrat', sans-serif; font-weight: 600;
+      color: rgba(255,255,255,0.4); font-size: 12px;
+      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 38px;
+    }
+
+    /* Countdown */
+    .countdown { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 42px; }
+    .cd-item { text-align: center; }
+    .cd-val {
+      display: block; font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 900; color: white; line-height: 1;
+      background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.1);
+      border-radius: 10px; padding: 14px 18px; min-width: 84px;
+    }
+    .cd-label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--cream); text-transform: uppercase; margin-top: 7px; }
+
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 26px; border-radius: 7px;
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 13px; letter-spacing: 0.3px;
+      cursor: pointer; transition: all 0.2s; border: none;
+    }
+    .btn-lime { background: var(--lime); color: var(--dark); }
+    .btn-lime:hover { background: var(--lime-d); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(141,198,63,0.38); color: white; }
+    .btn-orange { background: var(--orange); color: white; }
+    .btn-orange:hover { background: var(--orange-d); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(224,104,48,0.4); }
+    .btn-outline { background: rgba(255,255,255,0.09); color: white; border: 1.5px solid rgba(255,255,255,0.22); }
+    .btn-outline:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+    .btn-pink { background: var(--pink); color: white; }
+    .btn-pink:hover { background: var(--pink-d); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,64,104,0.4); }
+
+    .scroll-cue {
+      position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: rgba(255,255,255,0.28); animation: scrl 2.2s ease-in-out infinite;
+    }
+    .scroll-cue span { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; }
+    @keyframes scrl { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+
+    /* ====== SECTIONS ====== */
+    section { padding: 76px 24px; }
+    .wrap { max-width: 1200px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 52px; }
+    .eyebrow { display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.7rem); font-weight: 900; text-transform: uppercase; line-height: 1.05; }
+    .section-desc { font-size: 15px; line-height: 1.7; max-width: 540px; margin: 14px auto 0; }
+
+    /* ====== NIEUWS ====== */
+    #nieuws { background: var(--light); }
+    #nieuws .eyebrow { color: var(--lime-d); }
+    #nieuws .section-title { color: var(--dark); }
+    .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(258px, 1fr)); gap: 16px; }
+    .news-card {
+      background: white; border: 1px solid var(--border);
+      border-left: 3px solid transparent;
+      border-radius: 12px; padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s, border-left-color 0.2s;
+    }
+    .news-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.07); border-left-color: var(--lime); }
+    .news-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(141,198,63,0.1); color: var(--lime-d);
+      font-size: 10px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 9px; border-radius: 4px; margin-bottom: 12px;
+      border: 1px solid rgba(141,198,63,0.2);
+    }
+    /* Nieuwskaart met live-accent (webcam) */
+    .news-card.is-live { border-left-color: #E8404A; }
+    .news-card.is-live:hover { border-left-color: #E8404A; }
+    .news-tag.tag-live {
+      background: rgba(232,64,74,0.09); color: #C42030;
+      border-color: rgba(232,64,74,0.24);
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: #E8404A;
+      flex-shrink: 0; animation: campulse 1.8s ease-in-out infinite;
+    }
+    .news-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 11px; font-size: 12px; font-weight: 800;
+      font-family: 'Montserrat', sans-serif; color: var(--teal-d);
+      transition: color 0.18s, gap 0.18s;
+    }
+    .news-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+    .news-link:hover { color: var(--dark); gap: 9px; }
+
+    .news-tag svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .news-card h3 { color: var(--dark); font-size: 16px; font-weight: 800; line-height: 1.35; margin-bottom: 8px; }
+    .news-card p { color: var(--gray); font-size: 13.5px; line-height: 1.7; }
+    .news-date { display: block; color: var(--muted); font-size: 11px; margin-top: 10px; }
+
+    /* ====== PROGRAMMA ====== */
+    #programma { background: var(--dark); }
+    #programma .eyebrow { color: var(--cream); }
+    #programma .section-title { color: white; }
+    #programma .section-desc { color: rgba(255,255,255,0.45); }
+
+    .day-tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
+    .day-tab {
+      background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.09);
+      color: rgba(255,255,255,0.45); font-family: 'Montserrat', sans-serif;
+      font-weight: 800; font-size: 13px; padding: 9px 20px; border-radius: 7px;
+      cursor: pointer; transition: all 0.18s;
+    }
+    .day-tab:hover:not(.tab-active) { background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.75); }
+    .tab-wo  { background: var(--teal)!important;    border-color: var(--teal)!important;   color: white!important; }
+    .tab-do  { background: var(--orange)!important;  border-color: var(--orange)!important; color: white!important; }
+    .tab-vr  { background: var(--pink)!important;    border-color: var(--pink)!important;   color: white!important; }
+    .tab-za  { background: var(--purple)!important;  border-color: var(--purple)!important; color: white!important; }
+
+    .day-panel { display: none; max-width: 700px; margin: 0 auto; }
+    .day-panel.active { display: block; }
+    .day-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .day-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .day-head h3 { font-size: 20px; font-weight: 900; color: white; }
+    .day-head span { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 2px; display: block; }
+
+    .prog { display: flex; flex-direction: column; gap: 7px; }
+    .prog-row {
+      display: grid; grid-template-columns: 100px 1fr auto;
+      align-items: center; gap: 14px;
+      background: rgba(255,255,255,0.055); border: 1px solid rgba(255,255,255,0.08);
+      border-left: 2px solid transparent;
+      border-radius: 8px; padding: 13px 16px; transition: all 0.18s;
+    }
+    .prog-row:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.13); border-left-color: var(--lime); }
+    .prog-time { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11.5px; line-height: 1.4; }
+    .t-wo { color: var(--teal); } .t-do { color: var(--orange); } .t-vr { color: var(--pink); } .t-za { color: #C080E0; }
+    .prog-name { font-weight: 600; font-size: 14.5px; color: white; line-height: 1.3; }
+    .prog-name small { display: block; font-size: 11px; color: rgba(255,255,255,0.36); font-weight: 400; margin-top: 2px; }
+    .prog-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 9px; border-radius: 4px; white-space: nowrap; }
+    /* Type-tags: DJ · Band · Tribute · Show · Kids — alles op het podium */
+    .tag-dj      { background: rgba(90,172,188,0.15); color: var(--teal);  border: 1px solid rgba(90,172,188,0.24); }
+    .tag-band    { background: rgba(141,198,63,0.15); color: var(--lime);  border: 1px solid rgba(141,198,63,0.26); }
+    .tag-tribute { background: rgba(136,64,168,0.18); color: #C080E0;      border: 1px solid rgba(136,64,168,0.28); }
+    .tag-show    { background: rgba(232,64,104,0.15); color: #F2789A;      border: 1px solid rgba(232,64,104,0.26); }
+    .tag-kids    { background: rgba(224,104,48,0.15); color: #F0925E;      border: 1px solid rgba(224,104,48,0.26); }
+
+    /* Podium-label boven elke dag */
+    .prog-stage-note {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; color: rgba(255,255,255,0.42);
+      margin-bottom: 14px;
+    }
+    .prog-stage-note svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Sub-set (Tribute Time Machine blokken) */
+    .prog-sub {
+      margin: 4px 0 4px 0; padding-left: 14px;
+      border-left: 2px solid rgba(192,128,224,0.35);
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .prog-sub-row {
+      display: flex; align-items: baseline; gap: 10px;
+      font-size: 12.5px; color: rgba(255,255,255,0.78);
+    }
+    .prog-sub-row b { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11px; color: #C080E0; min-width: 84px; }
+
+    /* ====== KIDS / MOVE4FUN BANNER ====== */
+    #kids {
+      background: var(--teal);
+      padding: 56px 24px;
+    }
+    #kids .eyebrow { color: rgba(255,255,255,0.65); }
+    #kids .section-title { color: white; }
+    .kids-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; max-width: 900px; margin: 0 auto; }
+    .kids-text p { color: rgba(255,255,255,0.82); font-size: 15px; line-height: 1.75; margin-bottom: 16px; }
+    .kids-pills { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 20px; }
+    .kids-pill { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: white; font-size: 12px; font-weight: 700; padding: 6px 13px; border-radius: 50px; display: flex; align-items: center; gap: 6px; }
+    .kids-pill svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .kids-cta { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--teal-d); font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px; padding: 11px 22px; border-radius: 7px; transition: all 0.2s; }
+    .kids-cta:hover { background: var(--cream); transform: translateY(-2px); }
+    .kids-cta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .kids-visual {
+      background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 16px; padding: 32px 24px; text-align: center;
+    }
+    .kids-icon-row { display: flex; justify-content: center; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+    .kids-icon { width: 56px; height: 56px; background: rgba(255,255,255,0.18); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    .kids-icon svg { width: 26px; height: 26px; stroke: white; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .kids-badge { background: var(--lime); color: var(--dark); font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 50px; display: inline-block; }
+    @media(max-width:768px){ .kids-grid { grid-template-columns: 1fr; } }
+
+    /* ====== IRMA MODE ====== */
+    #irmmode {
+      background: var(--pink);
+      padding: 0;
+      overflow: hidden;
+    }
+    .irma-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      max-width: 1200px; margin: 0 auto;
+      min-height: 360px;
+    }
+    .irma-content { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; }
+    .irma-content .eyebrow { color: rgba(255,255,255,0.6); }
+    .irma-content h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900; color: white; text-transform: uppercase; line-height: 1.05; margin-bottom: 14px; }
+    .irma-content p { color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.72; margin-bottom: 20px; max-width: 420px; }
+    .irma-days { display: flex; gap: 10px; margin-bottom: 22px; flex-wrap: wrap; }
+    .irma-day { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.25); color: white; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 12px; padding: 7px 14px; border-radius: 6px; }
+    .irma-cta { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--pink-d); font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13px; padding: 11px 22px; border-radius: 7px; transition: all 0.2s; align-self: flex-start; }
+    .irma-cta svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .irma-cta:hover { background: var(--cream); transform: translateY(-2px); }
+    /* Foto van de modeshow als achtergrond, logo eroverheen */
+    .irma-visual {
+      display: flex; align-items: center; justify-content: center; padding: 40px;
+      position: relative; overflow: hidden;
+      min-height: 340px;
+      background: var(--pink-d);
+      text-decoration: none; cursor: pointer;
+    }
+    .irma-visual-photo {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 32%;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .irma-visual:hover .irma-visual-photo { transform: scale(1.07); }
+    .irma-visual:hover::before { opacity: 0.82; }
+    .irma-visual:hover .irma-visual-inner { transform: translateY(-5px); }
+    /* Verloop zodat het logo altijd leesbaar blijft op de foto */
+    .irma-visual::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      transition: opacity 0.4s;
+      background:
+        linear-gradient(to bottom,
+          rgba(140,20,55,0.30) 0%,
+          rgba(120,16,48,0.62) 55%,
+          rgba(100,12,40,0.80) 100%);
+    }
+    .irma-visual-inner {
+      position: relative; z-index: 2; text-align: center;
+      transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .irma-dress-icon { margin: 0 auto 16px; }
+    .irma-visual h3 { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 22px; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+    .irma-visual p { color: rgba(255,255,255,0.7); font-size: 13px; }
+    @media(max-width:768px){ .irma-inner { grid-template-columns: 1fr; } .irma-visual { min-height: 200px; } }
+
+
+    /* ====== WEBCAM (VTM) ====== */
+    /* Achtergrond op de sectie zodat de kleurbaan de volle breedte vult (net als Irma) */
+    #webcam {
+      padding: 0;
+      background: var(--teal-d);
+      overflow: hidden;
+    }
+    .cam-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      max-width: 1200px; margin: 0 auto;
+      min-height: 360px;
+    }
+    .cam-content { padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; }
+    .cam-content .eyebrow { color: var(--lime); }
+    .cam-content h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900;
+      color: white; text-transform: uppercase; line-height: 1.05; margin-bottom: 14px;
+    }
+    .cam-content p { color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.72; margin-bottom: 20px; max-width: 430px; }
+    .cam-pills { display: flex; gap: 9px; margin-bottom: 24px; flex-wrap: wrap; }
+    .cam-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13);
+      color: rgba(255,255,255,0.8); font-size: 11.5px; font-weight: 600;
+      padding: 7px 13px; border-radius: 50px;
+    }
+    .cam-pill svg { width: 13px; height: 13px; stroke: var(--lime); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+    .cam-live-dot { width: 7px; height: 7px; border-radius: 50%; background: #E8404A; animation: campulse 1.8s ease-in-out infinite; }
+    @keyframes campulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.8); } }
+    .cam-cta {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: var(--lime); color: var(--dark);
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 13.5px;
+      padding: 13px 24px; border-radius: 7px; align-self: flex-start;
+      transition: all 0.2s;
+    }
+    .cam-cta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .cam-cta:hover { background: var(--lime-d); color: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(141,198,63,0.35); }
+
+    /* Klikbare foto met inzoom-effect — leidt naar de site van VTM */
+    .cam-visual {
+      position: relative; overflow: hidden;
+      min-height: 340px;
+      display: flex; align-items: center; justify-content: center; padding: 40px;
+      background: var(--teal-d);
+      text-decoration: none; cursor: pointer;
+    }
+    .cam-visual-photo {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 40%; display: block;
+      transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .cam-visual:hover .cam-visual-photo { transform: scale(1.07); }
+    .cam-visual::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to bottom,
+        rgba(14,52,62,0.38) 0%, rgba(12,46,56,0.66) 55%, rgba(10,40,50,0.82) 100%);
+      transition: opacity 0.4s;
+    }
+    .cam-visual:hover::before { opacity: 0.82; }
+    .cam-visual-inner {
+      position: relative; z-index: 2; text-align: center;
+      transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .cam-visual:hover .cam-visual-inner { transform: translateY(-5px); }
+    .cam-sponsor-label {
+      display: block; font-family: 'Montserrat', sans-serif;
+      font-size: 10px; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(255,255,255,0.6);
+      margin-bottom: 16px; text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    }
+    .cam-vtm-badge {
+      display: inline-block; padding: 22px 30px;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.22);
+      border-radius: 14px;
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    }
+    .cam-vtm-badge img { height: 62px; width: auto; margin: 0 auto; display: block; }
+    .cam-vtm-sub {
+      display: block; margin-top: 14px;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,0.65); text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    }
+    @media(max-width:768px){
+      .cam-inner { grid-template-columns: 1fr; }
+      .cam-content { padding: 40px 22px; }
+      .cam-visual { min-height: 240px; }
+    }
+
+
+    /* ====== HUISREGELS ====== */
+    #huisregels { background: white; }
+    #huisregels .eyebrow { color: #C42030; }
+    #huisregels .section-title { color: var(--dark); }
+    .regels-intro {
+      max-width: 680px; margin: 0 auto 40px; text-align: center;
+      padding: 20px 26px;
+      background: rgba(196,32,48,0.05);
+      border: 1px solid rgba(196,32,48,0.2);
+      border-radius: 12px;
+    }
+    .regels-intro p { font-size: 14.5px; line-height: 1.75; color: var(--dark); }
+    .regels-intro strong { font-weight: 800; }
+    .regels-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; max-width: 1000px; margin: 0 auto;
+    }
+    .regel {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: white; border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .regel:hover {
+      border-color: rgba(196,32,48,0.4);
+      box-shadow: 0 8px 26px rgba(0,0,0,0.07);
+      transform: translateY(-3px);
+    }
+    .regel-ic { flex-shrink: 0; width: 46px; height: 46px; }
+    .regel-ic svg { width: 46px; height: 46px; display: block; }
+    .regel-txt h3 {
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 15px; text-transform: uppercase; letter-spacing: 0.3px;
+      color: var(--dark); margin-bottom: 5px; line-height: 1.15;
+    }
+    .regel-txt h3 em { font-style: normal; color: #C42030; }
+    .regel-txt p { font-size: 12.5px; line-height: 1.6; color: var(--gray); }
+    .regels-foot {
+      max-width: 820px; margin: 38px auto 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .regels-note {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px;
+    }
+    .regels-note h4 {
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 12px; text-transform: uppercase; letter-spacing: 1px;
+      color: var(--dark); margin-bottom: 8px;
+    }
+    .regels-note p { font-size: 12.5px; line-height: 1.7; color: var(--gray); }
+    .regels-slot {
+      margin-top: 30px; text-align: center;
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 14px; color: var(--lime-d);
+    }
+    @media (max-width: 900px) { .regels-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) {
+      .regels-grid { grid-template-columns: 1fr; }
+      .regels-foot { grid-template-columns: 1fr; }
+    }
+
+    /* ====== PLATTEGROND ====== */
+    #plattegrond { background: var(--light); }
+    #plattegrond .eyebrow { color: var(--lime-d); }
+    .map-frame {
+      max-width: 980px; margin: 0 auto; background: white;
+      border-radius: 16px; border: 8px solid var(--lime);
+      overflow: hidden; box-shadow: 0 8px 36px rgba(0,0,0,0.09);
+      cursor: zoom-in;
+    }
+    .map-frame img { width: 100%; height: auto; display: block; }
+    .map-actions {
+      display: flex; gap: 10px; justify-content: center;
+      margin-top: 18px; flex-wrap: wrap;
+    }
+    .map-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 20px; border-radius: 7px; border: none; cursor: pointer;
+      background: var(--lime); color: var(--dark);
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 12.5px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s, color 0.2s;
+    }
+    .map-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .map-btn:hover { background: var(--lime-d); color: white; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(141,198,63,0.35); }
+    .map-btn-ghost {
+      background: transparent; color: var(--gray);
+      border: 1.5px solid var(--border);
+    }
+    .map-btn-ghost:hover { background: white; color: var(--dark); border-color: var(--lime); box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    /* Lightbox voor plattegrond */
+    .map-lightbox {
+      position: fixed; inset: 0; z-index: 3000;
+      background: rgba(15,15,15,0.94);
+      display: none; align-items: center; justify-content: center;
+      padding: 20px; cursor: zoom-out;
+    }
+    .map-lightbox.open { display: flex; }
+    .map-lightbox img { max-width: 100%; max-height: 92vh; border-radius: 8px; }
+    .map-lightbox-close {
+      position: absolute; top: 18px; right: 22px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.24);
+      color: white; font-size: 24px; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+    }
+
+    /* ====== PARTNERS (diapositief logo-grid) ====== */
+    #partners { background: var(--mid); }
+    #partners .eyebrow { color: var(--lime); }
+    #partners .section-title { color: white; }
+    #partners .section-desc { color: rgba(255,255,255,0.55); }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+      max-width: 1080px; margin: 0 auto;
+    }
+    .partner {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 96px; padding: 18px 16px;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      transition: background 0.22s, border-color 0.22s, transform 0.22s;
+    }
+    .partner img {
+      max-width: 100%; max-height: 52px;
+      width: auto; height: auto; object-fit: contain;
+      opacity: 0.62;
+      transition: opacity 0.22s, transform 0.22s;
+    }
+    a.partner:hover {
+      background: rgba(141,198,63,0.07);
+      border-color: rgba(141,198,63,0.32);
+      transform: translateY(-3px);
+    }
+    a.partner:hover img { opacity: 1; transform: scale(1.04); }
+    .partner-dank {
+      max-width: 660px; margin: 34px auto 0; text-align: center;
+      padding: 20px 26px;
+      background: rgba(141,198,63,0.07);
+      border: 1px solid rgba(141,198,63,0.22);
+      border-radius: 12px;
+      font-size: 13.5px; line-height: 1.75; color: rgba(255,255,255,0.72);
+    }
+    .partner-dank strong { color: var(--lime); font-weight: 800; }
+    .partner-note {
+      text-align: center; margin-top: 18px;
+      font-size: 13px; color: rgba(255,255,255,0.4);
+    }
+    .partner-note a { color: var(--lime); border-bottom: 1px solid rgba(141,198,63,0.35); }
+    .partner-note a:hover { color: white; border-bottom-color: white; }
+
+    /* ====== FAQ ====== */
+    #faq { background: var(--cream); }
+    #faq .eyebrow { color: var(--forest); }
+    #faq .section-title { color: var(--dark); }
+    #faq .section-desc { color: var(--gray); }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+    .faq-item {
+      background: white; border: 1px solid rgba(45,92,26,0.2);
+      border-left: 3px solid transparent;
+      border-radius: 10px; overflow: hidden;
+      transition: border-left-color 0.22s, box-shadow 0.22s;
+    }
+    .faq-item[open] { border-left-color: var(--lime-d); box-shadow: 0 4px 20px rgba(45,92,26,0.1); }
+    .faq-item summary {
+      cursor: pointer; list-style: none;
+      padding: 17px 46px 17px 20px; position: relative;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 14.5px; color: var(--dark); line-height: 1.4;
+      transition: color 0.18s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { color: var(--forest); }
+    .faq-item summary::after {
+      content: ''; position: absolute; right: 20px; top: 50%;
+      width: 9px; height: 9px; margin-top: -6px;
+      border-right: 2px solid var(--forest);
+      border-bottom: 2px solid var(--forest);
+      transform: rotate(45deg);
+      transition: transform 0.24s;
+    }
+    .faq-item[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+    .faq-body { padding: 0 20px 19px; }
+    .faq-body p { font-size: 13.5px; line-height: 1.78; color: var(--gray); }
+    .faq-body strong { color: var(--dark); font-weight: 700; }
+
+    .kids-video-note {
+      margin-top: 11px; font-size: 11.5px;
+      color: rgba(255,255,255,0.42); text-align: center; line-height: 1.5;
+    }
+    .kids-video-note a { color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.3); }
+    .kids-video-note a:hover { color: white; border-bottom-color: white; }
+
+    /* Thumbnail-weergave (alleen als de pagina lokaal geopend wordt) */
+    .video-facade {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      display: block; overflow: hidden; background: #000; cursor: pointer;
+    }
+    .video-facade img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      opacity: 0.8; transition: opacity 0.3s, transform 0.5s;
+    }
+    .video-facade:hover img { opacity: 0.62; transform: scale(1.04); }
+    .video-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 66px; height: 66px; border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .video-facade:hover .video-play {
+      transform: translate(-50%, -50%) scale(1.12);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.55);
+    }
+    .video-play svg { width: 25px; height: 25px; fill: var(--teal-d); margin-left: 4px; }
+
+    /* ====== V2 TYPOGRAFIE BADGE — HERO ====== */
+    .v2-badge { display: inline-flex; flex-direction: column; align-items: center; margin-bottom: 30px; }
+    .v2-badge-inner {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--cream); border: 3px solid var(--lime);
+      border-radius: 14px; padding: 18px 24px 18px 22px;
+    }
+    .v2-wplein {
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: clamp(32px, 5.5vw, 58px); line-height: 0.9;
+      color: var(--forest); text-transform: uppercase; letter-spacing: -1.5px;
+    }
+    .v2-right {
+      display: flex; flex-direction: column; gap: 2px;
+      border-left: 2.5px solid var(--lime); padding-left: 16px;
+    }
+    .v2-right span {
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: clamp(10px, 1.6vw, 16px); color: var(--forest);
+      letter-spacing: 3px; text-transform: uppercase; line-height: 1.4;
+    }
+
+    /* ====== IRMA WORDMARK ====== */
+    .irma-wordmark {
+      display: inline-block; border: 1.5px solid rgba(255,255,255,0.6);
+      padding: 20px 32px 16px; text-align: center; margin-bottom: 14px;
+      background: rgba(90,10,35,0.28);
+      backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.45);
+    }
+    .irma-wordmark-text {
+      display: block; font-family: 'Montserrat', sans-serif; font-weight: 200;
+      font-size: clamp(30px, 4vw, 44px); color: white;
+      letter-spacing: 0.35em; line-height: 1;
+    }
+    .irma-wordmark-sub {
+      display: block; font-family: 'Montserrat', sans-serif; font-weight: 400;
+      font-size: 10px; color: rgba(255,255,255,0.75);
+      letter-spacing: 0.5em; margin-top: 9px; text-transform: uppercase;
+    }
+    /* Hint die verschijnt bij hover over een klikbare foto */
+    .visual-hint {
+      display: inline-flex; align-items: center; gap: 7px;
+      margin-top: 16px; padding: 8px 16px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 11px; letter-spacing: 0.6px; color: white;
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+      opacity: 0; transform: translateY(6px);
+      transition: opacity 0.35s, transform 0.35s;
+    }
+    .visual-hint svg {
+      width: 13px; height: 13px; stroke: currentColor; fill: none;
+      stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+      transition: transform 0.3s;
+    }
+    .irma-visual:hover .visual-hint,
+    .cam-visual:hover .visual-hint { opacity: 1; transform: translateY(0); }
+    .irma-visual:hover .visual-hint svg,
+    .cam-visual:hover .visual-hint svg { transform: translateX(3px); }
+    /* Toetsenbordgebruikers zien de hint ook */
+    .irma-visual:focus-visible .visual-hint,
+    .cam-visual:focus-visible .visual-hint { opacity: 1; transform: translateY(0); }
+    .irma-visual:focus-visible, .cam-visual:focus-visible { outline: 3px solid var(--lime); outline-offset: -3px; }
+
+    .irma-visual-caption {
+      color: rgba(255,255,255,0.75); font-size: 11px;
+      letter-spacing: 2px; text-transform: uppercase;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+    }
+
+    /* ====== FOTO COLLAGE ====== */
+    #fotos { background: white; }
+    #fotos .eyebrow { color: var(--teal-d); }
+    .collage {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 150px;
+      grid-auto-flow: dense;
+      gap: 10px;
+    }
+    .col { position: relative; overflow: hidden; border-radius: 10px; background: var(--light); }
+    .col img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .col:hover img { transform: scale(1.06); }
+    .col.L { grid-column: span 2; grid-row: span 2; }
+    .col.T { grid-row: span 2; }
+    .col.W { grid-column: span 2; }
+    .col-ov {
+      position: absolute; inset: 0;
+      display: flex; align-items: flex-end;
+      padding: 14px;
+      background: linear-gradient(to top, rgba(26,26,26,0.72) 0%, transparent 52%);
+      opacity: 0; transition: opacity 0.28s;
+    }
+    .col:hover .col-ov { opacity: 1; }
+    .col-ov span {
+      color: white; font-family: 'Montserrat', sans-serif;
+      font-weight: 700; font-size: 12px; line-height: 1.3;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    }
+    .foto-note {
+      text-align: center; margin-top: 22px;
+      font-size: 12px; color: var(--muted);
+    }
+    .foto-note strong { color: var(--dark); }
+    @media (max-width: 900px) {
+      .collage { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 130px; }
+      .col.L { grid-column: span 2; grid-row: span 2; }
+      .col.T { grid-row: span 1; }
+      .col.W { grid-column: span 2; }
+    }
+
+    /* ====== INFO ====== */
+    #info { background: var(--light); }
+    #info .eyebrow { color: var(--teal-d); }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+    .info-card {
+      background: white; border: 1px solid var(--border);
+      border-radius: 12px; padding: 26px 22px;
+      transition: box-shadow 0.22s, transform 0.22s, border-color 0.22s;
+    }
+    .info-card:hover { box-shadow: 0 6px 22px rgba(0,0,0,0.07); transform: translateY(-3px); border-color: var(--lime); }
+    .info-ic {
+      width: 42px; height: 42px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 15px;
+    }
+    .info-ic svg { width: 21px; height: 21px; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .ic-orange { background: rgba(224,104,48,0.12); } .ic-orange svg { stroke: var(--orange); }
+    .ic-lime   { background: rgba(141,198,63,0.14); } .ic-lime svg   { stroke: var(--lime-d); }
+    .ic-teal   { background: rgba(90,172,188,0.14); } .ic-teal svg   { stroke: var(--teal-d); }
+    .ic-purple { background: rgba(136,64,168,0.12); } .ic-purple svg { stroke: var(--purple); }
+    .ic-pink   { background: rgba(232,64,104,0.12); } .ic-pink svg   { stroke: var(--pink-d); }
+    .info-card h3 {
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--dark); margin-bottom: 10px;
+    }
+    .info-card p, .info-card ul { font-size: 13px; color: var(--gray); line-height: 1.8; }
+    .info-card ul { list-style: none; }
+    .info-card ul li { padding-left: 14px; position: relative; }
+    .info-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--lime-d); font-weight: 700; }
+    .info-rows { display: flex; flex-direction: column; margin-top: 2px; }
+    .info-row {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border);
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-row-k { font-size: 13px; color: var(--gray); }
+    .info-row-v {
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 13px; color: var(--dark); white-space: nowrap;
+    }
+    .info-row-v.hl { color: var(--lime-d); }
+    .info-foot {
+      margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border);
+      font-size: 12px; color: var(--muted); line-height: 1.6;
+    }
+    .info-address { font-size: 14px; line-height: 1.85; color: var(--gray); }
+    .info-address strong { color: var(--dark); font-weight: 800; font-size: 15px; }
+    .info-link {
+      display: inline-flex; align-items: center; gap: 7px; margin-top: 14px;
+      font-size: 12.5px; font-weight: 700; color: var(--lime-d);
+      transition: color 0.18s, gap 0.18s;
+    }
+    .info-link svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .info-link:hover { color: var(--dark); gap: 10px; }
+
+    /* ====== BEREIKBAARHEID ====== */
+    .travel { margin-top: 58px; }
+    .travel-head { text-align: center; max-width: 620px; margin: 0 auto 30px; }
+    .travel-head h3 {
+      font-size: clamp(1.3rem, 2.6vw, 1.75rem); font-weight: 900;
+      text-transform: uppercase; color: var(--dark); line-height: 1.15; margin-bottom: 10px;
+    }
+    .travel-head p { font-size: 14px; line-height: 1.7; color: var(--gray); }
+    .travel-grid { display: grid; gap: 18px; grid-template-columns: 1.25fr 1fr 1fr; align-items: start; }
+    .travel-card {
+      position: relative; background: white; border: 1px solid var(--border);
+      border-radius: 14px; padding: 26px 24px;
+      transition: box-shadow 0.22s, border-color 0.22s, transform 0.22s;
+    }
+    .travel-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.07); transform: translateY(-3px); }
+    .travel-bike { background: linear-gradient(160deg, #F4F8EA 0%, #FFFFFF 62%); border-color: rgba(141,198,63,0.4); }
+    .travel-bike:hover { border-color: var(--lime); }
+    .travel-badge {
+      position: absolute; top: 18px; right: 18px;
+      background: var(--lime); color: var(--dark);
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 9px; letter-spacing: 1.4px; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 50px;
+    }
+    .travel-ic {
+      width: 44px; height: 44px; border-radius: 11px;
+      background: rgba(141,198,63,0.12);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 15px;
+    }
+    .travel-ic svg { width: 22px; height: 22px; stroke: var(--lime-d); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .travel-card h4 {
+      font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 15px;
+      text-transform: uppercase; letter-spacing: 0.4px; color: var(--dark); margin-bottom: 9px;
+    }
+    .travel-card > p { font-size: 13.5px; line-height: 1.72; color: var(--gray); }
+    .travel-card strong { color: var(--dark); font-weight: 700; }
+    .travel-note {
+      margin-top: 14px; padding-top: 13px; border-top: 1px dashed var(--border);
+      font-size: 11.5px; color: var(--muted); line-height: 1.6;
+    }
+    .travel-ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 7px; }
+    .travel-ul li { position: relative; padding-left: 16px; font-size: 13px; line-height: 1.6; color: var(--gray); }
+    .travel-ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 5px; height: 5px; border-radius: 50%; background: var(--lime); }
+    .bike-spots { display: flex; flex-direction: column; gap: 9px; margin-top: 15px; }
+    .bike-spot {
+      display: flex; align-items: center; gap: 12px;
+      background: white; border: 1px solid rgba(141,198,63,0.3);
+      border-radius: 9px; padding: 11px 14px;
+      text-decoration: none; cursor: pointer;
+      transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+    }
+    .bike-spot:hover {
+      border-color: var(--lime); transform: translateX(3px);
+      box-shadow: 0 4px 14px rgba(141,198,63,0.18);
+    }
+    .bike-spot:focus-visible { outline: 2.5px solid var(--lime-d); outline-offset: 2px; }
+    /* Kaart-pin verschijnt bij hover */
+    .bike-map {
+      margin-left: auto; flex-shrink: 0;
+      display: flex; align-items: center;
+      opacity: 0.35; transition: opacity 0.2s, transform 0.2s;
+    }
+    .bike-map svg {
+      width: 16px; height: 16px; stroke: var(--lime-d); fill: none;
+      stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .bike-spot:hover .bike-map { opacity: 1; transform: scale(1.1); }
+    .bike-num {
+      flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%;
+      background: var(--lime); color: var(--dark);
+      font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 12px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bike-spot strong { display: block; font-size: 13.5px; font-weight: 800; color: var(--dark); line-height: 1.25; }
+    .bike-spot small { display: block; font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+    .bus-lines { display: flex; flex-direction: column; gap: 7px; margin-top: 14px; }
+    .bus-line { display: flex; align-items: center; gap: 11px; font-size: 12.5px; color: var(--gray); line-height: 1.35; }
+    .bus-nr {
+      flex-shrink: 0; min-width: 34px; text-align: center;
+      background: var(--teal); color: white;
+      font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 11px;
+      padding: 4px 7px; border-radius: 5px;
+    }
+    .walk-note {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 16px; padding: 13px 15px;
+      background: rgba(90,172,188,0.09); border: 1px solid rgba(90,172,188,0.26);
+      border-radius: 9px;
+    }
+    .walk-note svg { width: 22px; height: 22px; flex-shrink: 0; stroke: var(--teal-d); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .walk-note strong { display: block; font-size: 13.5px; font-weight: 800; color: var(--dark); line-height: 1.25; }
+    .walk-note small { display: block; font-size: 11.5px; color: var(--gray); margin-top: 2px; }
+    .travel-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 15px; padding: 11px 18px;
+      background: var(--teal); color: white; border-radius: 7px;
+      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 12.5px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .travel-cta svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .travel-cta:hover { background: var(--teal-d); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(90,172,188,0.35); }
+
+    /* Routeplanner (auto) — zelfde ritme als het OV-blok */
+    .route-form { margin-top: 15px; }
+    .route-label {
+      display: block; font-size: 11px; font-weight: 800;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 7px;
+    }
+    .route-input-row {
+      display: flex; align-items: center; gap: 10px;
+      background: white; border: 1.5px solid var(--border);
+      border-radius: 9px; padding: 10px 13px;
+      transition: border-color 0.18s, box-shadow 0.18s;
+    }
+    .route-input-row:focus-within { border-color: var(--lime); box-shadow: 0 0 0 3px rgba(141,198,63,0.16); }
+    .route-pin { flex-shrink: 0; display: flex; align-items: center; }
+    .route-pin svg { width: 17px; height: 17px; stroke: var(--lime-d); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+    .route-pin-end svg { stroke: var(--teal-d); }
+    .route-input {
+      flex: 1; border: none; outline: none; background: transparent;
+      font-family: 'Inter', sans-serif; font-size: 13.5px; color: var(--dark);
+      min-width: 0;
+    }
+    .route-input::placeholder { color: var(--muted); }
+    .route-arrow { display: flex; justify-content: center; padding: 5px 0 3px; }
+    .route-arrow svg { width: 16px; height: 16px; stroke: var(--border); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .route-dest {
+      display: flex; align-items: center; gap: 10px;
+      background: rgba(90,172,188,0.08);
+      border: 1px solid rgba(90,172,188,0.24);
+      border-radius: 9px; padding: 10px 13px;
+    }
+    .route-dest strong { display: block; font-size: 13.5px; font-weight: 800; color: var(--dark); line-height: 1.25; }
+    .route-dest small { display: block; font-size: 11.5px; color: var(--gray); margin-top: 1px; }
+    .route-btn { width: 100%; justify-content: center; border: none; cursor: pointer; font-family: 'Montserrat', sans-serif; }
+    @media (max-width: 900px) { .travel-grid { grid-template-columns: 1fr; } }
+
+    /* ====== FOOTER ====== */
+    footer { background: var(--dark); padding: 54px 24px 26px; }
+    .footer-wrap { max-width: 1200px; margin: 0 auto; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px;
+      padding-bottom: 34px; border-bottom: 1px solid rgba(255,255,255,0.09);
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.75;
+      max-width: 330px; margin-bottom: 18px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social-note {
+      margin-top: 11px !important; margin-bottom: 0 !important;
+      font-size: 11.5px !important; color: rgba(255,255,255,0.32) !important;
+    }
+    .soc {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .soc svg { width: 17px; height: 17px; stroke: rgba(255,255,255,0.7); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .soc:hover { background: rgba(141,198,63,0.15); border-color: var(--lime); transform: translateY(-2px); }
+    .soc:hover svg { stroke: var(--lime); }
+    .footer-col h4 {
+      color: white; font-size: 11px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 1.6px; margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col ul li a, .footer-col ul li {
+      color: rgba(255,255,255,0.5); font-size: 13px; transition: color 0.18s;
+    }
+    .footer-col ul li a:hover { color: var(--lime); }
+    .footer-bottom {
+      padding-top: 26px; text-align: center;
+      color: rgba(255,255,255,0.3); font-size: 12px; line-height: 1.7;
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+    }
+    /* Wilhelmina-silhouet als bescheiden signatuur onderaan de pagina */
+    .footer-mark {
+      height: 40px; width: auto; margin-bottom: 12px;
+      opacity: 0.2;
+      transition: opacity 0.4s;
+    }
+    footer:hover .footer-mark { opacity: 0.34; }
+    @media (max-width: 768px) {
+      .footer-top { grid-template-columns: 1fr; gap: 30px; }
+    }
+
+    /* ====== PROGRAM ARTIST LINKS ====== */
+    .prog-name a {
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+      transition: color 0.18s, border-color 0.18s;
+    }
+    .prog-name a:hover {
+      color: var(--lime);
+      border-bottom-color: var(--lime);
+    }
+
+    /* ====== KIDS PHOTO VISUAL ====== */
+    .kids-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 240px;
+      padding: 0 !important;
+    }
+    .kids-visual img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      border-radius: 14px;
+      min-height: 240px;
+    }
+    /* hero overflow clip */
+    #hero { overflow: hidden; }
+
+    .kids-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,26,26,0.55) 0%, transparent 55%);
+      border-radius: 14px;
+    }
+    .kids-badge-abs {
+      position: absolute; bottom: 16px; left: 50%;
+      transform: translateX(-50%); white-space: nowrap;
+      background: var(--lime); color: var(--dark);
+      font-family: 'Montserrat', sans-serif; font-weight: 900;
+      font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======== NAVBAR ======== -->
+<nav id="nav">
+  <div class="nav-wrap">
+    <div class="nav-logo">
+      <a href="#hero" class="nav-v2-badge">
+        <span class="nav-v2-wplein">WILHELMINA<br>PLEIN</span>
+        <div class="nav-v2-right">
+          <span>FEESTWEEK</span>
+          <span>NAALDWIJK</span>
+        </div>
+      </a>
+      <div class="nav-date">26–29 AUG 2026</div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#nieuws">Nieuws</a></li>
+      <li><a href="#programma">Programma</a></li>
+      <li><a href="#webcam">Webcam</a></li>
+      <li><a href="#plattegrond">Plattegrond</a></li>
+      <li><a href="#fotos">Foto's</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#info" class="nav-cta">Praktische info</a></li>
+    </ul>
+    <div class="hamburger" id="hbg" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ======== HERO ======== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+
+    <h1 class="sr-only">Feestweek Naaldwijk 2026 — Wilhelminaplein, 26 t/m 29 augustus</h1>
+
+    <!-- V2 typografie-badge — geen logo, puur typografie conform huisstijl -->
+    <div class="v2-badge">
+      <div class="v2-badge-inner">
+        <span class="v2-wplein">WILHELMINA<br>PLEIN</span>
+        <div class="v2-right">
+          <span>FEESTWEEK</span>
+          <span>NAALDWIJK</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-date-pill">26 t/m 29 Augustus 2026</div>
+    <p class="hero-place">Gezellig &nbsp;·&nbsp; Westlands &nbsp;·&nbsp; Feesten</p>
+
+    <div class="countdown">
+      <div class="cd-item"><span class="cd-val" id="cd-d">--</span><span class="cd-label">Dagen</span></div>
+      <div class="cd-item"><span class="cd-val" id="cd-h">--</span><span class="cd-label">Uren</span></div>
+      <div class="cd-item"><span class="cd-val" id="cd-m">--</span><span class="cd-label">Minuten</span></div>
+      <div class="cd-item"><span class="cd-val" id="cd-s">--</span><span class="cd-label">Seconden</span></div>
+    </div>
+
+    <div class="hero-btns">
+      <a href="#programma" class="btn btn-lime">
+        <!-- Solar Linear: music note -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+        </svg>
+        Bekijk programma
+      </a>
+      <a href="#info" class="btn btn-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        Praktische info
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <!-- Solar Linear: alt arrow down -->
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14"/><path d="M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== NIEUWS ======== -->
+<section id="nieuws">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Laatste nieuws</div>
+      <h2 class="section-title">Wat er speelt</h2>
+    </div>
+    <div class="news-grid">
+      <div class="news-card is-live">
+        <div class="news-tag tag-live">
+          <span class="live-dot"></span>
+          Nieuw
+        </div>
+        <h3>Vanaf dinsdag live: de webcam op het plein</h3>
+        <p>Vanaf dinsdag 25 augustus staat onze webcam aan. Kijk mee terwijl het plein wordt opgebouwd en volg de hele Feestweek live vanaf je bank. Mede mogelijk gemaakt door VTM Groep uit Maasdijk.</p>
+        <a class="news-link" href="#webcam">
+          Naar de webcam
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+        <span class="news-date">Augustus 2026</span>
+      </div>
+      <div class="news-card">
+        <div class="news-tag">
+          <!-- Solar Linear: document -->
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          Aankondiging
+        </div>
+        <h3>Feestweek 2026 is officieel van start!</h3>
+        <p>Van woensdag 26 t/m zaterdag 29 augustus vieren we het grootste feest van Naaldwijk. Vier dagen vol live muziek, terrassen en gezelligheid op het Wilhelminaplein.</p>
+        <span class="news-date">Juni 2026</span>
+      </div>
+      <div class="news-card">
+        <div class="news-tag">
+          <!-- Solar Linear: music note -->
+          <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+          Programma
+        </div>
+        <h3>Klapband, Melrose &amp; First Class Flamingo's bevestigd!</h3>
+        <p>De lineup voor 2026 staat vast. Showband Klapband, Partyband Melrose, Tribute Time Machine en First Class Flamingo's — vier onvergetelijke avonden!</p>
+        <span class="news-date">Juni 2026</span>
+      </div>
+      <div class="news-card">
+        <div class="news-tag">
+          <!-- Solar Linear: star -->
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Handig om te weten
+        </div>
+        <h3>Kom op de fiets — drie stallingen vlakbij</h3>
+        <p>Stal je fiets op het Emmaplein, bij De Naald of bij de Bibliotheek. Alle drie op loopafstand van het plein, zodat het Wilhelminaplein vrij blijft.</p>
+        <span class="news-date">Augustus 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== PROGRAMMA ======== -->
+<section id="programma">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">26 – 29 Augustus 2026</div>
+      <h2 class="section-title">Programma</h2>
+      <p class="section-desc">Vier avonden live muziek, tributes en feest op het Wilhelminaplein in Naaldwijk.</p>
+    </div>
+    <div class="day-tabs">
+      <button class="day-tab tab-wo" onclick="showDay(event,'wo')">Wo 26/8</button>
+      <button class="day-tab" onclick="showDay(event,'do')">Do 27/8</button>
+      <button class="day-tab" onclick="showDay(event,'vr')">Vr 28/8</button>
+      <button class="day-tab" onclick="showDay(event,'za')">Za 29/8</button>
+    </div>
+
+    <div id="pw" class="day-panel active">
+      <div class="day-head"><div class="day-dot" style="background:var(--teal)"></div><div><h3>Woensdag 26 augustus</h3><span>Opening Feestweek 2026</span></div></div>
+      <div class="prog-stage-note">
+        <svg viewBox="0 0 24 24"><path d="M3 21V10l9-6 9 6v11"/><path d="M3 14h18"/><path d="M9 21v-5h6v5"/></svg>
+        Alle optredens op het podium
+      </div>
+      <div class="prog">
+        <div class="prog-row"><span class="prog-time t-wo">Ochtend<br>&amp; middag</span><div class="prog-name"><a href="https://moveforfun.nl" target="_blank" rel="noopener noreferrer">Speel &amp; Spel Spektakel</a><small>Move For Fun · leuke en actieve spellen voor alle leeftijden — gratis!</small></div><span class="prog-tag tag-kids">Kids</span></div>
+        <div class="prog-row"><span class="prog-time t-wo">14:00–16:00</span><div class="prog-name">Niels Wagenaar<small>Zanger / DJ</small></div><span class="prog-tag tag-dj">DJ</span></div>
+        <div class="prog-row"><span class="prog-time t-wo">19:30–00:30</span><div class="prog-name">DJ Martin Five</div><span class="prog-tag tag-dj">DJ</span></div>
+        <div class="prog-row"><span class="prog-time t-wo">20:30–00:30</span><div class="prog-name"><a href="https://www.melrose.nl" target="_blank" rel="noopener noreferrer">Melrose</a><small>Feestband — headliner woensdag</small></div><span class="prog-tag tag-band">Band</span></div>
+      </div>
+    </div>
+    <div id="pd" class="day-panel">
+      <div class="day-head"><div class="day-dot" style="background:var(--orange)"></div><div><h3>Donderdag 27 augustus</h3><span>Tribute Time Machine</span></div></div>
+      <div class="prog-stage-note">
+        <svg viewBox="0 0 24 24"><path d="M3 21V10l9-6 9 6v11"/><path d="M3 14h18"/><path d="M9 21v-5h6v5"/></svg>
+        Alle optredens op het podium
+      </div>
+      <div class="prog">
+        <div class="prog-row"><span class="prog-time t-do">Ochtend<br>&amp; middag</span><div class="prog-name"><a href="https://moveforfun.nl" target="_blank" rel="noopener noreferrer">Speel &amp; Spel Spektakel</a><small>Move For Fun · leuke en actieve spellen voor alle leeftijden — gratis!</small></div><span class="prog-tag tag-kids">Kids</span></div>
+        <div class="prog-row"><span class="prog-time t-do">13:30–15:30</span><div class="prog-name">DJ Kevins Kids Spektakel<small>Speciaal voor de kinderen</small></div><span class="prog-tag tag-kids">Kids</span></div>
+        <div class="prog-row"><span class="prog-time t-do">16:00–18:30</span><div class="prog-name"><a href="https://vaneigenbodem.nl" target="_blank" rel="noopener noreferrer">Van Eigen Bodem</a><small>Feestband</small></div><span class="prog-tag tag-band">Band</span></div>
+        <div class="prog-row"><span class="prog-time t-do">18:30–00:30</span><div class="prog-name">DJ Eeft van der Ende</div><span class="prog-tag tag-dj">DJ</span></div>
+        <div class="prog-row">
+          <span class="prog-time t-do">21:00–00:30</span>
+          <div class="prog-name">
+            Tribute Time Machine<small>Tributeband — vier iconische sets op rij</small>
+            <div class="prog-sub">
+              <div class="prog-sub-row"><b>21:00–22:00</b> Coldplay</div>
+              <div class="prog-sub-row"><b>22:00–22:45</b> U2</div>
+              <div class="prog-sub-row"><b>22:45–23:35</b> The Beatles</div>
+              <div class="prog-sub-row"><b>23:45–00:30</b> The Rolling Stones</div>
+            </div>
+          </div>
+          <span class="prog-tag tag-tribute">Tribute</span>
+        </div>
+      </div>
+    </div>
+    <div id="pv" class="day-panel">
+      <div class="day-head"><div class="day-dot" style="background:var(--pink)"></div><div><h3>Vrijdag 28 augustus</h3><span>Klapband — showband</span></div></div>
+      <div class="prog-stage-note">
+        <svg viewBox="0 0 24 24"><path d="M3 21V10l9-6 9 6v11"/><path d="M3 14h18"/><path d="M9 21v-5h6v5"/></svg>
+        Alle optredens op het podium
+      </div>
+      <div class="prog">
+        <div class="prog-row"><span class="prog-time t-vr">Ochtend<br>&amp; middag</span><div class="prog-name"><a href="https://moveforfun.nl" target="_blank" rel="noopener noreferrer">Speel &amp; Spel Spektakel</a><small>Move For Fun · leuke en actieve spellen voor alle leeftijden — gratis!</small></div><span class="prog-tag tag-kids">Kids</span></div>
+        <div class="prog-row"><span class="prog-time t-vr">13:30–15:30</span><div class="prog-name"><a href="https://www.irma-mode.nl" target="_blank" rel="noopener noreferrer">Modeshow Irma Mode</a><small>De nieuwste collecties op het podium</small></div><span class="prog-tag tag-show">Show</span></div>
+        <div class="prog-row"><span class="prog-time t-vr">15:30–01:00</span><div class="prog-name"><a href="https://www.feestdjwesley.nl" target="_blank" rel="noopener noreferrer">Feest DJ Wesley</a></div><span class="prog-tag tag-dj">DJ</span></div>
+        <div class="prog-row"><span class="prog-time t-vr">16:30–17:00</span><div class="prog-name">Diva Turner<small>Bekend van The Tribute Battle · 1e set</small></div><span class="prog-tag tag-show">Show</span></div>
+        <div class="prog-row"><span class="prog-time t-vr">17:45–18:15</span><div class="prog-name">Diva Turner<small>2e set</small></div><span class="prog-tag tag-show">Show</span></div>
+        <div class="prog-row"><span class="prog-time t-vr">21:00–00:45</span><div class="prog-name"><a href="https://klapbandtheband.nl" target="_blank" rel="noopener noreferrer">Klapband</a><small>Showband — headliner vrijdag</small></div><span class="prog-tag tag-band">Band</span></div>
+      </div>
+    </div>
+    <div id="pz" class="day-panel">
+      <div class="day-head"><div class="day-dot" style="background:var(--purple)"></div><div><h3>Zaterdag 29 augustus</h3><span>First Class Flamingo's — grote finale!</span></div></div>
+      <div class="prog-stage-note">
+        <svg viewBox="0 0 24 24"><path d="M3 21V10l9-6 9 6v11"/><path d="M3 14h18"/><path d="M9 21v-5h6v5"/></svg>
+        Alle optredens op het podium
+      </div>
+      <div class="prog">
+        <div class="prog-row"><span class="prog-time t-za">Ochtend<br>&amp; middag</span><div class="prog-name"><a href="https://moveforfun.nl" target="_blank" rel="noopener noreferrer">Speel &amp; Spel Spektakel</a><small>Move For Fun · leuke en actieve spellen voor alle leeftijden — gratis!</small></div><span class="prog-tag tag-kids">Kids</span></div>
+        <div class="prog-row"><span class="prog-time t-za">13:30–15:30</span><div class="prog-name"><a href="https://www.irma-mode.nl" target="_blank" rel="noopener noreferrer">Modeshow Irma Mode</a><small>De nieuwste collecties op het podium</small></div><span class="prog-tag tag-show">Show</span></div>
+        <div class="prog-row"><span class="prog-time t-za">15:30–19:30</span><div class="prog-name">DJ Martin Five</div><span class="prog-tag tag-dj">DJ</span></div>
+        <div class="prog-row"><span class="prog-time t-za">16:30–18:30</span><div class="prog-name">The Scientist<small>Coldplay tribute</small></div><span class="prog-tag tag-tribute">Tribute</span></div>
+        <div class="prog-row"><span class="prog-time t-za">19:30–01:00</span><div class="prog-name">DJ Mike Laros</div><span class="prog-tag tag-dj">DJ</span></div>
+        <div class="prog-row"><span class="prog-time t-za">21:00–00:45</span><div class="prog-name"><a href="https://www.firstclassflamingos.nl" target="_blank" rel="noopener noreferrer">First Class Flamingo's</a><small>Slotstuk — grote finale Feestweek 2026</small></div><span class="prog-tag tag-band">Band</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== MOVE FOR FUN KIDS ======== -->
+<section id="kids">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Woensdag t/m zaterdag overdag</div>
+      <h2 class="section-title">Voor de kids!</h2>
+    </div>
+    <div class="kids-grid">
+      <div class="kids-text">
+        <p>Terwijl de grote mensen genieten van de sfeer op het plein, is er overdag van woensdag t/m zaterdag van alles te doen voor de allerkleinsten. Verzorgd door <strong style="color:white">Move For Fun</strong> staan er elke dag leuke opblaas-objecten en spellen klaar voor de kinderen. Gratis toegankelijk voor alle bezoekers van de Feestweek!</p>
+        <div class="kids-pills">
+          <span class="kids-pill">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            Gratis voor kids
+          </span>
+          <span class="kids-pill">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></svg>
+            Wo t/m Za overdag
+          </span>
+          <span class="kids-pill">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Op het Wilhelminaplein
+          </span>
+        </div>
+        <a href="https://moveforfun.nl" target="_blank" rel="noopener" class="kids-cta">
+          Meer over Move For Fun
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="kids-visual">
+        <div class="kids-video" id="mffWrap" data-vid="Bpli_2gCGlc">
+          <!-- De speler wordt door JavaScript ingeladen. Een iframe die direct in de
+               HTML staat stuurt vanaf een lokaal bestand geen geldige referrer mee,
+               waardoor YouTube fout 153 geeft. Via JS gaat dat wel goed. -->
+          <noscript>
+            <a href="https://youtu.be/Bpli_2gCGlc" target="_blank" rel="noopener noreferrer">
+              Bekijk de Move For Fun video op YouTube
+            </a>
+          </noscript>
+        </div>
+        <p class="kids-video-note">
+          Speelt automatisch af zonder geluid — klik op het geluidsicoon voor geluid.
+          <a href="https://youtu.be/Bpli_2gCGlc" target="_blank" rel="noopener noreferrer">Openen op YouTube</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== PLATTEGROND ======== -->
+<section id="plattegrond">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Wilhelminaplein Naaldwijk</div>
+      <h2 class="section-title">Festivalplattegrond</h2>
+      <p class="section-desc">Vind je weg op het plein — van het podium tot de gezelligste terrassen.</p>
+    </div>
+    <div class="map-frame">
+      <img src="fotos/festivalplattegrond.jpg"
+           alt="Festivalplattegrond Wilhelminaplein Naaldwijk — podium, bars, terrassen, toiletten en kidszone"
+           loading="lazy">
+    </div>
+    <div class="map-actions">
+      <button type="button" class="map-btn" onclick="openMap()">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+        Vergroot plattegrond
+      </button>
+      <a class="map-btn map-btn-ghost" href="fotos/festivalplattegrond.jpg" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== FOTO'S ======== -->
+<section id="fotos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sfeer · Herinneringen · Feestweek</div>
+      <h2 class="section-title">Foto's</h2>
+      <p class="section-desc">De mooiste momenten van Feestweek Naaldwijk — inclusief dronevlucht boven het Wilhelminaplein.</p>
+    </div>
+    <div class="collage">
+      <!-- Rij 1–2: grote drone links + 2 rechtsboven + hoge kolom -->
+      <div class="col L">
+        <img src="fotos/DJI_20250830131918_0001_D_MabelBohms.jpg" alt="Overzicht Wilhelminaplein" loading="lazy">
+        <div class="col-ov"><span>Wilhelminaplein vanuit de lucht</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/E28A2827_MabelBohms.jpg" alt="Optreden" loading="lazy">
+        <div class="col-ov"><span>Live optreden</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3189_MabelBohms.jpg" alt="Sfeer" loading="lazy">
+        <div class="col-ov"><span>Sfeer op het plein</span></div>
+      </div>
+      <div class="col T">
+        <img src="fotos/DX4A3256_MabelBohms.jpg" alt="Avond" loading="lazy">
+        <div class="col-ov"><span>Avondsfeer</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3202_MabelBohms.jpg" alt="Publiek" loading="lazy">
+        <div class="col-ov"><span>Publiek</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3211_MabelBohms.jpg" alt="Band" loading="lazy">
+        <div class="col-ov"><span>Band op podium</span></div>
+      </div>
+      <!-- Rij 3: breed drone + 2 normaal -->
+      <div class="col W">
+        <img src="fotos/DJI_20250830132132_0009_D_MabelBohms.jpg" alt="Vogelvlucht" loading="lazy">
+        <div class="col-ov"><span>Vogelvluchtperspectief</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3219_MabelBohms.jpg" alt="Gezelligheid" loading="lazy">
+        <div class="col-ov"><span>Gezelligheid</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3227_MabelBohms.jpg" alt="Muziek" loading="lazy">
+        <div class="col-ov"><span>Live muziek</span></div>
+      </div>
+      <!-- Rij 4: 4 normaal -->
+      <div class="col">
+        <img src="fotos/DX4A3243_MabelBohms.jpg" alt="Crowd" loading="lazy">
+        <div class="col-ov"><span>Volle bak!</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/E28A2741_MabelBohms.jpg" alt="Podium nacht" loading="lazy">
+        <div class="col-ov"><span>Podium 's avonds</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3303_MabelBohms.jpg" alt="Sfeer" loading="lazy">
+        <div class="col-ov"><span>Sfeer &amp; gezelligheid</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3310_MabelBohms.jpg" alt="Feest" loading="lazy">
+        <div class="col-ov"><span>Feestweek Naaldwijk</span></div>
+      </div>
+      <!-- Rij 5: hoge kolom links + breed drone + normaal -->
+      <div class="col T">
+        <img src="fotos/DX4A3279_MabelBohms.jpg" alt="Portret" loading="lazy">
+        <div class="col-ov"><span>Feestweekgangers</span></div>
+      </div>
+      <div class="col W">
+        <img src="fotos/DJI_20250830132210_0012_D_MabelBohms.jpg" alt="Luchtfoto" loading="lazy">
+        <div class="col-ov"><span>Het plein van boven</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3318_MabelBohms.jpg" alt="Muzikanten" loading="lazy">
+        <div class="col-ov"><span>Op het podium</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3325_MabelBohms.jpg" alt="Publiek" loading="lazy">
+        <div class="col-ov"><span>Vol publiek</span></div>
+      </div>
+      <div class="col">
+        <img src="fotos/DX4A3336_MabelBohms.jpg" alt="Optreden" loading="lazy">
+        <div class="col-ov"><span>Live act</span></div>
+      </div>
+    </div>
+    <p class="foto-note">Foto's &amp; drone: <strong>Mabel Bohms Photography</strong> · Feestweek Naaldwijk 2025</p>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== IRMA MODE ======== -->
+<section id="irmmode">
+  <div class="irma-inner">
+    <div class="irma-content">
+      <div class="eyebrow">Vrijdag &amp; Zaterdag · 13:30–15:30</div>
+      <h2>Modeshow<br>Irma Mode</h2>
+      <p>Op vrijdag 28 en zaterdag 29 augustus presenteert <strong style="color:white">Irma Mode</strong> een prachtige modeshow op het Wilhelminaplein. De nieuwste collecties komen tot leven in een unieke sfeer, midden op het festival. Een schitterend spektakel voor jong en oud!</p>
+      <div class="irma-days">
+        <div class="irma-day">Vr 28 aug · 13:30–15:30</div>
+        <div class="irma-day">Za 29 aug · 13:30–15:30</div>
+      </div>
+      <a href="https://www.irma-mode.nl" target="_blank" rel="noopener" class="irma-cta">
+        Ontdek Irma Mode
+        <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+    <a class="irma-visual" href="https://www.irma-mode.nl" target="_blank" rel="noopener noreferrer"
+       aria-label="Naar de website van Irma Mode">
+      <img src="fotos/irma_modeshow.jpg" class="irma-visual-photo"
+           alt="Modeshow Irma Mode op het Wilhelminaplein tijdens de Feestweek" loading="lazy">
+      <div class="irma-visual-inner">
+        <!-- Irma Mode logo — wit/transparant over de foto -->
+        <div class="irma-wordmark">
+          <span class="irma-wordmark-text">IRMA</span>
+          <span class="irma-wordmark-sub">Mode</span>
+        </div>
+        <p class="irma-visual-caption">Modeshow Feestweek 2025</p>
+        <span class="visual-hint">
+          Bekijk irma-mode.nl
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== WEBCAM (VTM) ======== -->
+<section id="webcam">
+  <div class="cam-inner">
+    <div class="cam-content">
+      <div class="eyebrow">Live vanaf het Wilhelminaplein</div>
+      <h2>Kijk mee<br>met de webcam</h2>
+      <p>Benieuwd hoe druk het is op het plein? Of wil je vanuit huis toch een beetje meegenieten? Onze webcam staat de hele Feestweek live op YouTube. Zo mis je niets van de sfeer op het Wilhelminaplein.</p>
+      <div class="cam-pills">
+        <span class="cam-pill"><span class="cam-live-dot"></span>Live tijdens de Feestweek</span>
+        <span class="cam-pill">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="15" height="10" rx="2"/><polygon points="17 11 22 8 22 16 17 13"/></svg>
+          Rechtstreeks op YouTube
+        </span>
+      </div>
+      <!-- De link wordt gezet via de constante WEBCAM_URL onderaan in het script.
+           Zolang die leeg is, toont de knop "Binnenkort beschikbaar". -->
+      <a id="camLink" href="#webcam" class="cam-cta">
+        <svg viewBox="0 0 24 24"><polygon points="6 3 21 12 6 21"></polygon></svg>
+        <span id="camLinkText">Bekijk de webcam</span>
+      </a>
+    </div>
+    <a class="cam-visual" href="https://www.vtmgroep.nl" target="_blank" rel="noopener noreferrer"
+       aria-label="Naar de website van VTM Groep">
+      <img src="fotos/webcam-plein.jpg" class="cam-visual-photo"
+           alt="Het Wilhelminaplein in Naaldwijk tijdens de Feestweek" loading="lazy">
+      <div class="cam-visual-inner">
+        <span class="cam-sponsor-label">Mede mogelijk gemaakt door</span>
+        <div class="cam-vtm-badge">
+          <img src="fotos/vtm-logo.png" alt="VTM — Maasdijk">
+        </div>
+        <span class="cam-vtm-sub">VTM Groep · Maasdijk</span>
+        <span class="visual-hint">
+          Bekijk vtmgroep.nl
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<div class="zebra"></div>
+
+<!-- ======== PARTNERS ======== -->
+<section id="partners">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Partners 2025</div>
+      <h2 class="section-title">Zij maken de Feestweek mogelijk</h2>
+      <p class="section-desc">Feestweek Naaldwijk draait op ondernemend Westland. Hieronder een selectie van de bedrijven die meedoen — en dat zijn er nog veel meer.</p>
+    </div>
+    <div class="partner-grid">
+      <a class="partner" href="https://www.baljeuenstaal.nl" target="_blank" rel="noopener noreferrer" title="Baljeu en Staal"><img src="fotos/partners/baljeuenstaal.png" alt="Baljeu en Staal" loading="lazy"></a>
+      <a class="partner" href="https://www.bellisimowonenengenieten.nl" target="_blank" rel="noopener noreferrer" title="Bellisimo Wonen en Genieten"><img src="fotos/partners/bellisimo.png" alt="Bellisimo Wonen en Genieten" loading="lazy"></a>
+      <a class="partner" href="https://www.bhinterieur.nl/" target="_blank" rel="noopener noreferrer" title="Beukenholdt Interieur op maat"><img src="fotos/partners/beukenhold.png" alt="Beukenholdt Interieur op maat" loading="lazy"></a>
+      <a class="partner" href="https://www.biersteker.nl" target="_blank" rel="noopener noreferrer" title="Biersteker Bouw, Dak- en Geveltechniek"><img src="fotos/partners/biersteker.png" alt="Biersteker Bouw, Dak- en Geveltechniek" loading="lazy"></a>
+      <a class="partner" href="https://www.davyjansenschilderwerken.nl/" target="_blank" rel="noopener noreferrer" title="Davy Jansen Schilderwerken"><img src="fotos/partners/davyjansen.png" alt="Davy Jansen Schilderwerken" loading="lazy"></a>
+      <a class="partner" href="https://www.de-elektriciens.nl" target="_blank" rel="noopener noreferrer" title="DE Elektriciens"><img src="fotos/partners/dion.png" alt="DE Elektriciens" loading="lazy"></a>
+      <a class="partner" href="https://degier.net/" target="_blank" rel="noopener noreferrer" title="De Gier"><img src="fotos/partners/degier.png" alt="De Gier" loading="lazy"></a>
+      <a class="partner" href="https://www.delta.nl" target="_blank" rel="noopener noreferrer" title="DELTA Fiber Nederland"><img src="fotos/partners/delta.png" alt="DELTA Fiber Nederland" loading="lazy"></a>
+      <a class="partner" href="https://www.donhoveniers.nl" target="_blank" rel="noopener noreferrer" title="DON Hoveniers B.V."><img src="fotos/partners/donhoveniers.png" alt="DON Hoveniers B.V." loading="lazy"></a>
+      <a class="partner" href="https://www.dtlconnect.nl" target="_blank" rel="noopener noreferrer" title="DTL Connect"><img src="fotos/partners/dtlconnect.png" alt="DTL Connect" loading="lazy"></a>
+      <a class="partner" href="https://www.dvbdesign.nl" target="_blank" rel="noopener noreferrer" title="dvbdesign"><img src="fotos/partners/dvb.png" alt="dvbdesign" loading="lazy"></a>
+      <a class="partner" href="https://flashelektro.nl/" target="_blank" rel="noopener noreferrer" title="Flash Elektro"><img src="fotos/partners/flash.png" alt="Flash Elektro" loading="lazy"></a>
+      <a class="partner" href="https://www.floramotion.nl" target="_blank" rel="noopener noreferrer" title="Floramotion"><img src="fotos/partners/floramotion.png" alt="Floramotion" loading="lazy"></a>
+      <a class="partner" href="https://www.hertogjan.nl" target="_blank" rel="noopener noreferrer" title="Hertog Jan"><img src="fotos/partners/hertogjan.png" alt="Hertog Jan" loading="lazy"></a>
+      <a class="partner" href="https://www.hstuinbouwservice.nl" target="_blank" rel="noopener noreferrer" title="HS Tuinbouw Service"><img src="fotos/partners/hstuinbouw.png" alt="HS Tuinbouw Service" loading="lazy"></a>
+      <a class="partner" href="https://www.hygienepapier.nl" target="_blank" rel="noopener noreferrer" title="Hygiënepapier.nl bv"><img src="fotos/partners/hygienepapier.png" alt="Hygiënepapier.nl bv" loading="lazy"></a>
+      <a class="partner" href="https://www.jellehomestyle.nl" target="_blank" rel="noopener noreferrer" title="Jelle Home Style"><img src="fotos/partners/jellehomestyle.png" alt="Jelle Home Style" loading="lazy"></a>
+      <a class="partner" href="https://www.jem-id.nl" target="_blank" rel="noopener noreferrer" title="jem-id"><img src="fotos/partners/jemid.png" alt="jem-id" loading="lazy"></a>
+      <a class="partner" href="https://www.jorgarden.nl" target="_blank" rel="noopener noreferrer" title="JOR Garden Hoveniers"><img src="fotos/partners/jorgarden.png" alt="JOR Garden Hoveniers" loading="lazy"></a>
+      <a class="partner" href="https://www.jrit.nl/" target="_blank" rel="noopener noreferrer" title="Just Right IT B.V."><img src="fotos/partners/justrightit.png" alt="Just Right IT B.V." loading="lazy"></a>
+      <a class="partner" href="https://www.juva.nl" target="_blank" rel="noopener noreferrer" title="N.V. Juva"><img src="fotos/partners/juva.png" alt="N.V. Juva" loading="lazy"></a>
+      <a class="partner" href="https://www.instagram.com/kester_graafwerk/" target="_blank" rel="noopener noreferrer" title="Kester Graafwerk &amp; Montage"><img src="fotos/partners/kester.png" alt="Kester Graafwerk &amp; Montage" loading="lazy"></a>
+      <a class="partner" href="https://www.kubo.nl" target="_blank" rel="noopener noreferrer" title="KUBO"><img src="fotos/partners/kubo.png" alt="KUBO" loading="lazy"></a>
+      <a class="partner" href="http://leeksmamontage.nl/" target="_blank" rel="noopener noreferrer" title="Leeksma Montage B.V."><img src="fotos/partners/kevin-leeksma.png" alt="Leeksma Montage B.V." loading="lazy"></a>
+      <a class="partner" href="https://www.logiqs.nl/" target="_blank" rel="noopener noreferrer" title="Logiqs B.V."><img src="fotos/partners/logiqs.png" alt="Logiqs B.V." loading="lazy"></a>
+      <a class="partner" href="https://malkenhorstmakelaars.nl" target="_blank" rel="noopener noreferrer" title="Malkenhorst Makelaars"><img src="fotos/partners/malkenhorst.png" alt="Malkenhorst Makelaars" loading="lazy"></a>
+      <a class="partner" href="https://www.mathieusaarloos.nl/" target="_blank" rel="noopener noreferrer" title="Mathieu Saarloos"><img src="fotos/partners/saarloos.png" alt="Mathieu Saarloos" loading="lazy"></a>
+      <a class="partner" href="https://healthcentermidex.nl/" target="_blank" rel="noopener noreferrer" title="MIDEX Health Center"><img src="fotos/partners/midex.png" alt="MIDEX Health Center" loading="lazy"></a>
+      <a class="partner" href="https://www.networkgroup.nl" target="_blank" rel="noopener noreferrer" title="NetWork Group B.V."><img src="fotos/partners/networkgroup.png" alt="NetWork Group B.V." loading="lazy"></a>
+      <a class="partner" href="https://www.olsthoorntts.nl" target="_blank" rel="noopener noreferrer" title="Olsthoorn Truck &amp; Trailer Service"><img src="fotos/partners/olsthoorn.png" alt="Olsthoorn Truck &amp; Trailer Service" loading="lazy"></a>
+      <a class="partner" href="https://pietvijverberg.nl/" target="_blank" rel="noopener noreferrer" title="Kwekerij Piet Vijverberg B.V."><img src="fotos/partners/pietvijverberg.png" alt="Kwekerij Piet Vijverberg B.V." loading="lazy"></a>
+      <a class="partner" href="https://www.promeer.nl/" target="_blank" rel="noopener noreferrer" title="ProMeer"><img src="fotos/partners/promeer.png" alt="ProMeer" loading="lazy"></a>
+      <a class="partner" href="https://registra.nl/" target="_blank" rel="noopener noreferrer" title="Registra"><img src="fotos/partners/registra.png" alt="Registra" loading="lazy"></a>
+      <a class="partner" href="https://www.rodi.nl" target="_blank" rel="noopener noreferrer" title="Rodi Media"><img src="fotos/partners/rodi.png" alt="Rodi Media" loading="lazy"></a>
+      <a class="partner" href="https://www.sligro.nl/" target="_blank" rel="noopener noreferrer" title="Sligro"><img src="fotos/partners/sligro.png" alt="Sligro" loading="lazy"></a>
+      <a class="partner" href="https://www.vandereendegroup.nl" target="_blank" rel="noopener noreferrer" title="Van der Ende Group"><img src="fotos/partners/vandereende.png" alt="Van der Ende Group" loading="lazy"></a>
+      <a class="partner" href="https://www.vandorp.eu" target="_blank" rel="noopener noreferrer" title="Van Dorp Installaties"><img src="fotos/partners/vandorp.png" alt="Van Dorp Installaties" loading="lazy"></a>
+      <a class="partner" href="https://vd-installaties.nl/" target="_blank" rel="noopener noreferrer" title="VD Installaties B.V."><img src="fotos/partners/vdinstallaties.png" alt="VD Installaties B.V." loading="lazy"></a>
+      <a class="partner" href="https://vb.nl/nl" target="_blank" rel="noopener noreferrer" title="Verbakel Services"><img src="fotos/partners/vbservices.png" alt="Verbakel Services" loading="lazy"></a>
+      <a class="partner" href="https://www.vitrona.nl" target="_blank" rel="noopener noreferrer" title="Vitrona"><img src="fotos/partners/vitrona.png" alt="Vitrona" loading="lazy"></a>
+      <a class="partner" href="https://www.vlp.nl/nl" target="_blank" rel="noopener noreferrer" title="VLP Flexibele Afscheidingen"><img src="fotos/partners/vlp.png" alt="VLP Flexibele Afscheidingen" loading="lazy"></a>
+      <a class="partner" href="https://www.waalpartners.nl" target="_blank" rel="noopener noreferrer" title="Waalpartners BV"><img src="fotos/partners/waalpartners.png" alt="Waalpartners BV" loading="lazy"></a>
+      <a class="partner" href="https://www.wehako.nl" target="_blank" rel="noopener noreferrer" title="Wehako B.V."><img src="fotos/partners/wehako.png" alt="Wehako B.V." loading="lazy"></a>
+      <a class="partner" href="https://www.weterings.com" target="_blank" rel="noopener noreferrer" title="Weterings Machinery"><img src="fotos/partners/weterings.png" alt="Weterings Machinery" loading="lazy"></a>
+      <a class="partner" href="https://www.worldstream.com" target="_blank" rel="noopener noreferrer" title="Worldstream"><img src="fotos/partners/worldstream.png" alt="Worldstream" loading="lazy"></a>
+      <a class="partner" href="https://wubbenchan.nl/" target="_blank" rel="noopener noreferrer" title="Wubben.Chan"><img src="fotos/partners/wubbenchan.png" alt="Wubben.Chan" loading="lazy"></a>
+      <a class="partner" href="https://www.zwirshortiprojects.nl" target="_blank" rel="noopener noreferrer" title="Zwirs Hortiprojects"><img src="fotos/partners/zwirs.png" alt="Zwirs Hortiprojects" loading="lazy"></a>
+    </div>
+    <p class="partner-dank">
+      <strong>Dank aan alle bedrijven</strong> die op wat voor manier dan ook hebben
+      meegeholpen om er dit jaar weer een mooie Feestweek van te maken.
+      Zonder hen geen feest op het plein.
+    </p>
+    <p class="partner-note">Ook meedoen? Mail naar <a href="mailto:info@feestweek-naaldwijk.nl">info@feestweek-naaldwijk.nl</a></p>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== FAQ ======== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Goed om te weten</div>
+      <h2 class="section-title">Veelgestelde vragen</h2>
+      <p class="section-desc">Alles wat je wilt weten voordat je naar het Wilhelminaplein komt.</p>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary>Wat kost het om binnen te komen?</summary>
+        <div class="faq-body"><p>Niets — de Feestweek is helemaal gratis toegankelijk. Alle vier de dagen, het hele programma. Je betaalt alleen voor je drankjes en eten op het plein.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Hoe laat begint en eindigt het?</summary>
+        <div class="faq-body"><p>Overdag is er vanaf de ochtend al van alles te doen met het Speel &amp; Spel Spektakel. De muziek op het podium start rond het middaguur. Woensdag en donderdag gaat het plein om 00:30 uur dicht, vrijdag en zaterdag om 01:00 uur.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is het geschikt voor kinderen?</summary>
+        <div class="faq-body"><p>Zeker! Van woensdag t/m zaterdag verzorgt Move For Fun overdag het Speel &amp; Spel Spektakel met leuke en actieve spellen voor alle leeftijden — helemaal gratis. Op donderdagmiddag is er bovendien het DJ Kevins Kids Spektakel. Overdag is de sfeer echt familievriendelijk; 's avonds wordt het drukker en later op de avond is het vooral een feest voor volwassenen.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Hoe kan ik betalen op het plein?</summary>
+        <div class="faq-body"><p>Makkelijk: je kunt gewoon <strong>pinnen</strong> of <strong>contant</strong> betalen aan de bar. Je hoeft dus vooraf geen munten te kopen.</p>
+        <p style="margin-top:10px">Kom je met je bedrijf? Dan zijn er speciale <strong>bedrijfsmuntjes</strong>. Die zitten in de zakelijke pakketten, zodat je collega's en relaties zonder gedoe kunnen bestellen.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Mag ik eigen drank meenemen?</summary>
+        <div class="faq-body"><p>Nee, eigen drank en glaswerk zijn niet toegestaan op het terrein. Er zijn genoeg bars op het plein. Vanaf 18 jaar mag je alcohol kopen — neem je legitimatie mee, er wordt op gecontroleerd.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Waar kan ik mijn fiets kwijt?</summary>
+        <div class="faq-body"><p>Kom vooral op de fiets, dat is verreweg het handigst. Er zijn drie officiële fietsenstallingen op loopafstand: het <strong>Emmaplein</strong> (bij Sport2000), bij <strong>De Naald</strong> (theater) en bij de <strong>Bibliotheek</strong>. Zet je fiets daar neer en niet los tegen de gevels rond het plein — dan blijft het plein voor iedereen goed doorloopbaar.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Kan ik in de buurt parkeren?</summary>
+        <div class="faq-body"><p>Ja, in het centrum van Naaldwijk kun je gratis parkeren op loopafstand van het plein. Let op: tijdens de feestweek is het rond het Wilhelminaplein een stuk drukker, dus kom op tijd — of pak de fiets.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Zijn er toiletten?</summary>
+        <div class="faq-body"><p>Ja, er staan toiletvoorzieningen op het plein. Op de festivalplattegrond hierboven zie je precies waar.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wat gebeurt er bij slecht weer?</summary>
+        <div class="faq-body"><p>De Feestweek gaat gewoon door — een groot deel van het plein is overkapt met de feesttent. Bij extreem weer kunnen we het programma aanpassen; volg dan onze socials voor het laatste nieuws.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is het toegankelijk met een rolstoel?</summary>
+        <div class="faq-body"><p>Het Wilhelminaplein is vlak en goed toegankelijk. Het kan 's avonds erg druk worden op het plein — kom je met een rolstoel of rollator, dan is de vroege avond het rustigst. Vragen? Laat het ons weten, we denken graag mee.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Mag ik mijn hond meenemen?</summary>
+        <div class="faq-body"><p>Liever niet. Het wordt druk en de muziek staat hard — dat is voor de meeste honden geen fijne omgeving. Laat je viervoeter dus lekker thuis.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wie organiseert de Feestweek?</summary>
+        <div class="faq-body"><p>De Feestweek op het Wilhelminaplein wordt georganiseerd door <strong>Brasserie Mirell</strong> en <strong>Restaurant Bij5</strong>, samen met alle toppers die elk jaar klaarstaan om er een top feestje van te maken. Samen vanouds gezellig — dat is het idee al jaren.</p></div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<section id="info">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Alles wat je moet weten</div>
+      <h2 class="section-title">Praktische info</h2>
+      <p class="section-desc">Vier dagen feest in het hart van Naaldwijk — hier vind je alles om zorgeloos te komen.</p>
+    </div>
+
+    <div class="info-grid">
+
+      <!-- Openingstijden -->
+      <div class="info-card">
+        <div class="info-ic ic-orange">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Openingstijden</h3>
+        <div class="info-rows">
+          <div class="info-row"><span class="info-row-k">Woensdag 26/8</span><span class="info-row-v">tot 00:30</span></div>
+          <div class="info-row"><span class="info-row-k">Donderdag 27/8</span><span class="info-row-v">tot 00:30</span></div>
+          <div class="info-row"><span class="info-row-k">Vrijdag 28/8</span><span class="info-row-v">tot 01:00</span></div>
+          <div class="info-row"><span class="info-row-k">Zaterdag 29/8</span><span class="info-row-v">tot 01:00</span></div>
+        </div>
+        <p class="info-foot">Overdag al open voor het Speel &amp; Spel Spektakel.</p>
+      </div>
+
+      <!-- Locatie -->
+      <div class="info-card">
+        <div class="info-ic ic-lime">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Locatie</h3>
+        <p class="info-address">
+          <strong>Wilhelminaplein</strong><br>
+          2671 GR Naaldwijk<br>
+          Gemeente Westland
+        </p>
+        <a class="info-link" href="https://www.google.com/maps/search/?api=1&amp;query=Wilhelminaplein+2671+GR+Naaldwijk" target="_blank" rel="noopener noreferrer">
+          Open in Google Maps
+          <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+
+      <!-- Toegang & entree -->
+      <div class="info-card">
+        <div class="info-ic ic-pink">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+        </div>
+        <h3>Toegang</h3>
+        <div class="info-rows">
+          <div class="info-row"><span class="info-row-k">Entree</span><span class="info-row-v hl">Gratis</span></div>
+          <div class="info-row"><span class="info-row-k">Betalen</span><span class="info-row-v hl">Pin &amp; contant</span></div>
+          <div class="info-row"><span class="info-row-k">Alcohol</span><span class="info-row-v">18+ · ID mee</span></div>
+        </div>
+        <p class="info-foot">Bedrijven betalen met de speciale bedrijfsmuntjes. Eigen drank en glaswerk niet toegestaan.</p>
+      </div>
+
+      <!-- Huisregels -->
+      <div class="info-card">
+        <div class="info-ic ic-purple">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>Huisregels</h3>
+        <p>Op het Wilhelminaplein gelden duidelijke regels. Geen drugs, geen wapens, geen glas en geen alcohol onder de 18. Zo houden we het voor iedereen leuk.</p>
+        <a class="info-link" href="#huisregels">
+          Bekijk alle huisregels
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ====== BEREIKBAARHEID — uitgelicht blok ====== -->
+    <div class="travel">
+      <div class="travel-head">
+        <h3>Zo kom je op het Wilhelminaplein</h3>
+        <p>Naaldwijk ligt midden in het Westland. Met de fiets ben je er zo — en dat is tijdens de feestweek verreweg het slimst.</p>
+      </div>
+
+      <div class="travel-grid">
+
+        <!-- FIETS -->
+        <div class="travel-card travel-bike">
+          <div class="travel-badge">Aanrader</div>
+          <div class="travel-ic">
+            <svg viewBox="0 0 24 24"><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 100-2 1 1 0 000 2z"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+          </div>
+          <h4>Met de fiets</h4>
+          <p>Kom je op de fiets? Verstandig. Zet 'm neer in een van de drie officiële stallingen op loopafstand van het plein:</p>
+          <div class="bike-spots">
+            <a class="bike-spot"
+               href="https://www.google.com/maps/search/?api=1&amp;query=Emmaplein%2C+Naaldwijk"
+               target="_blank" rel="noopener noreferrer">
+              <span class="bike-num">1</span>
+              <div><strong>Emmaplein</strong><small>bij Sport2000</small></div>
+              <span class="bike-map">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+            </a>
+            <a class="bike-spot"
+               href="https://www.google.com/maps/search/?api=1&amp;query=Stokdijkkade+3%2C+2671+GW+Naaldwijk"
+               target="_blank" rel="noopener noreferrer">
+              <span class="bike-num">2</span>
+              <div><strong>De Naald</strong><small>Stokdijkkade 3 · bij het theater</small></div>
+              <span class="bike-map">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+            </a>
+            <a class="bike-spot"
+               href="https://www.google.com/maps/search/?api=1&amp;query=Sint+Martinusstraat+67%2C+2671+GK+Naaldwijk"
+               target="_blank" rel="noopener noreferrer">
+              <span class="bike-num">3</span>
+              <div><strong>De Bibliotheek</strong><small>Sint Martinusstraat 67</small></div>
+              <span class="bike-map">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+            </a>
+          </div>
+          <p class="travel-note">Tik op een stalling om hem in Google Maps te openen. Zo houden we het plein vrij en loopbaar voor iedereen.</p>
+        </div>
+
+        <!-- OPENBAAR VERVOER -->
+        <div class="travel-card">
+          <div class="travel-ic">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="16" height="13" rx="2"/><path d="M19 8h2l2 4v4h-4"/><circle cx="7" cy="18.5" r="2"/><circle cx="17" cy="18.5" r="2"/><line x1="3" y1="11" x2="19" y2="11"/></svg>
+          </div>
+          <h4>Met bus of openbaar vervoer</h4>
+          <p>Vanuit het hele Westland rijden bussen naar <strong>Naaldwijk Busstation</strong>:</p>
+          <div class="bus-lines">
+            <div class="bus-line"><span class="bus-nr">30</span> Wateringen · Kwintsheul — Naaldwijk</div>
+            <div class="bus-line"><span class="bus-nr">31</span> Monster · 's-Gravenzande — Naaldwijk</div>
+            <div class="bus-line"><span class="bus-nr">33</span> Maasdijk — Naaldwijk</div>
+            <div class="bus-line"><span class="bus-nr">34</span> Monster · Maasdijk — Naaldwijk</div>
+            <div class="bus-line"><span class="bus-nr">456</span> R-NET · 's-Gravenzande — Naaldwijk</div>
+          </div>
+          <div class="walk-note">
+            <svg viewBox="0 0 24 24"><path d="M13 4a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/><path d="M9 21l2-5 2-3-1-5-3 2-2 3"/><path d="M13 13l3 2 1 6"/></svg>
+            <div><strong>5 minuten lopen</strong><small>vanaf de bushalte naar het Wilhelminaplein</small></div>
+          </div>
+          <a class="travel-cta" href="https://9292.nl" target="_blank" rel="noopener noreferrer">
+            Plan je reis op 9292.nl
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <p class="travel-note">Vul je eigen adres in en 9292 rekent de hele reis voor je uit.</p>
+        </div>
+
+        <!-- AUTO -->
+        <div class="travel-card">
+          <div class="travel-ic">
+            <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v9a2 2 0 01-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+          </div>
+          <h4>Met de auto</h4>
+          <p>Parkeren in het centrum van Naaldwijk is <strong>gratis</strong> en op loopafstand van het plein. Vul hieronder in waar je vandaan komt:</p>
+
+          <form class="route-form" onsubmit="planRoute(event)">
+            <label class="route-label" for="routeVan">Jouw vertrekpunt</label>
+            <div class="route-input-row">
+              <span class="route-pin">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+              </span>
+              <input type="text" id="routeVan" class="route-input"
+                     placeholder="Bijv. Monster of Kerkstraat 1, De Lier"
+                     autocomplete="street-address">
+            </div>
+            <div class="route-arrow">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="4" x2="12" y2="19"/><polyline points="6 13 12 19 18 13"/></svg>
+            </div>
+            <div class="route-dest">
+              <span class="route-pin route-pin-end">
+                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <strong>Wilhelminaplein</strong>
+                <small>2671 GR Naaldwijk</small>
+              </div>
+            </div>
+            <button type="submit" class="travel-cta route-btn">
+              Plan mijn route
+              <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </button>
+          </form>
+
+          <ul class="travel-ul">
+            <li>Vanaf de A20 — afslag Naaldwijk / Hoek van Holland</li>
+            <li>Vanaf de A4 — afslag Naaldwijk / Wateringen</li>
+          </ul>
+          <p class="travel-note">Rond het Wilhelminaplein staan tijdens de feestweek afzettingen — kom op tijd of parkeer iets verderop in het centrum.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="zebra"></div>
+
+<!-- ======== HUISREGELS ======== -->
+<section id="huisregels">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Huisregels Wilhelminaplein</div>
+      <h2 class="section-title">Zo houden we het<br>voor iedereen leuk</h2>
+    </div>
+
+    <div class="regels-intro">
+      <p>De Feestweek is van en voor heel Naaldwijk. Om dat zo te houden gelden er
+      <strong>negen huisregels</strong> op het plein. Deze regels zijn niet onderhandelbaar:
+      wie zich er niet aan houdt, wordt de toegang geweigerd. Bij ernstige overtredingen
+      schakelen wij direct de politie in.</p>
+    </div>
+
+    <div class="regels-grid">
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><path d='M24 12c-1.4 3-1.4 6 0 9 1.4-3 1.4-6 0-9zm-9 6c1.7 2.8 4 4.6 7 5.6-1-3-2.8-5.3-5.6-7zm18 0c-2.8 1.7-4.6 4-5.6 7 3-1 5.3-2.8 7-5.6zM14 27c2.9 1 5.5 1 8.4 0-2.4-1.8-5.1-2.1-8.4 0zm20 0c-3.3-2.1-6-1.8-8.4 0 2.9 1 5.5 1 8.4 0zM24 26l-1.2 10h2.4z'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>drugs</em></h3>
+          <p>Drugs zijn verboden. Bij ontdekking wordt de politie ingelicht.</p>
+        </div>
+      </div>
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><path d='M17 20h14v9a4 4 0 01-4 4h-6a4 4 0 01-4-4zm2-6h3v5h-3zm4-2h3v7h-3zm4 1h3v6h-3z'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>geweld</em></h3>
+          <p>Agressie in woord, gebaar of houding leidt direct tot toegangsontzegging.</p>
+        </div>
+      </div>
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><rect x='20' y='14' width='8' height='21' rx='3'/><rect x='22' y='10' width='4' height='5' rx='1.4'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>lachgas</em></h3>
+          <p>Lachgas is niet toegestaan op het evenemententerrein.</p>
+        </div>
+      </div>
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><path d='M13 20h16l2 4h4v3h-6l-3 6h-4l1-6h-6a4 4 0 01-4-4zm4 3h4v-1h-4z'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>wapens</em></h3>
+          <p>Wapens zijn verboden. Bij ontdekking wordt de politie ingelicht.</p>
+        </div>
+      </div>
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><path d='M21 10h6v6l3 5v14a2 2 0 01-2 2h-8a2 2 0 01-2-2V21l3-5z'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>flessen</em></h3>
+          <p>Blikjes, flesjes en glaswerk mogen niet mee naar binnen.</p>
+        </div>
+      </div>
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><path d='M15 12h18l-7 10v11h5v3H17v-3h5V22z'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>alcohol onder 18</em></h3>
+          <p>Wij schenken geen alcohol onder de 18. Neem altijd je legitimatie mee.</p>
+        </div>
+      </div>
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><path d='M24 13c6 0 10 3.6 10 8.5V25H14v-3.5C14 16.6 18 13 24 13zm10 9.5h5a2 2 0 010 4H34z'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>petjes</em></h3>
+          <p>Gepaste kleding graag: geen sportkleding, voetbalshirts of petjes.</p>
+        </div>
+      </div>
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><circle cx='15' cy='30' r='6' fill='none' stroke='#1A1A1A' stroke-width='3'/><circle cx='33' cy='30' r='6' fill='none' stroke='#1A1A1A' stroke-width='3'/><path d='M15 30l6-9h7l5 9M21 21h-4' fill='none' stroke='#1A1A1A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>fietsen</em></h3>
+          <p>Fietsen mogen niet op het terrein. Gebruik een van de drie fietsenstallingen.</p>
+        </div>
+      </div>
+      <div class="regel">
+        <div class="regel-ic"><svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#C42030" stroke-width="4.5"/><g fill="#1A1A1A"><rect x='11' y='16' width='26' height='17' rx='2.5' fill='none' stroke='#1A1A1A' stroke-width='3'/><circle cx='19' cy='23' r='3'/><path d='M26 22h7M26 27h7' stroke='#1A1A1A' stroke-width='2.6' stroke-linecap='round' fill='none'/></g><line x1="10" y1="38" x2="38" y2="10" stroke="#C42030" stroke-width="4.5" stroke-linecap="round"/></svg></div>
+        <div class="regel-txt">
+          <h3>Geen <em>vals ID</em></h3>
+          <p>Met een vals identiteitsbewijs word je de toegang geweigerd.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="regels-foot">
+      <div class="regels-note">
+        <h4>Beeldmateriaal</h4>
+        <p>Tijdens de Feestweek maken wij foto's en video's van het evenement en van
+        bezoekers. Dit materiaal kan gebruikt worden in promotiemateriaal. Door het
+        terrein te betreden geef je toestemming voor het gebruik hiervan.</p>
+      </div>
+      <div class="regels-note">
+        <h4>Aanwijzingen en toezicht</h4>
+        <p>Volg altijd de aanwijzingen van de organisatie en de beveiliging op. Zij
+        mogen bezoekers controleren bij de ingang en de toegang weigeren. Zie je iets
+        dat niet in orde is? Meld het gerust bij een medewerker.</p>
+      </div>
+    </div>
+
+    <p class="regels-slot">Houden we ons hieraan, dan wordt het weer een geweldige Feestweek.</p>
+  </div>
+</section>
+
+
+<div class="zebra"></div>
+
+<!-- ======== FOOTER ======== -->
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <!-- V2 typografie-badge — footer versie, klein, op donker -->
+        <div style="display:inline-flex;align-items:center;gap:10px;background:var(--cream);border:2px solid var(--lime);border-radius:10px;padding:8px 14px 8px 12px;margin-bottom:16px;">
+          <span style="font-family:'Montserrat',sans-serif;font-weight:900;font-size:20px;line-height:0.9;color:var(--forest);text-transform:uppercase;letter-spacing:-0.5px;">WILHELMINA<br>PLEIN</span>
+          <div style="display:flex;flex-direction:column;gap:0;border-left:1.5px solid var(--lime);padding-left:10px;">
+            <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:8px;color:var(--forest);letter-spacing:1.5px;text-transform:uppercase;line-height:1.55;">FEESTWEEK</span>
+            <span style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:8px;color:var(--forest);letter-spacing:1.5px;text-transform:uppercase;line-height:1.55;">NAALDWIJK</span>
+          </div>
+        </div>
+        <p>Lokaal, levendig, legendarisch. Elk jaar het grootste feest van Naaldwijk op het Wilhelminaplein.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/WilhelminapleinNaaldwijk" target="_blank" rel="noopener noreferrer" class="soc" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/brasserie_mirell/" target="_blank" rel="noopener noreferrer" class="soc" title="Instagram — Brasserie Mirell">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@brasseriemirell" target="_blank" rel="noopener noreferrer" class="soc" title="TikTok — Brasserie Mirell">
+            <svg viewBox="0 0 24 24"><path d="M16 3v10.5a4.5 4.5 0 11-4.5-4.5c.35 0 .68.04 1 .12"/><path d="M16 3a5 5 0 005 5"/></svg>
+          </a>
+        </div>
+        <p class="footer-social-note">Volg ons via de socials van Brasserie Mirell</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="#nieuws">Nieuws</a></li>
+          <li><a href="#programma">Programma</a></li>
+          <li><a href="#webcam">Webcam</a></li>
+          <li><a href="#plattegrond">Plattegrond</a></li>
+          <li><a href="#fotos">Foto's</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Feestweek</h4>
+        <ul>
+          <li><a href="#info">Praktische info</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#faq">Veelgestelde vragen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@feestweek-naaldwijk.nl">info@feestweek-naaldwijk.nl</a></li>
+          <li><a href="#huisregels">Huisregels</a></li>
+          <li><a href="#faq">Veelgestelde vragen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <img src="fotos/wilhelmina-mark.png" alt="" aria-hidden="true" class="footer-mark">
+      <span>© 2026 Feestweek Naaldwijk — Wilhelminaplein</span>
+      <span>26 t/m 29 augustus · Naaldwijk · Westland</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger nav
+  function toggleNav() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  }));
+
+  // Countdown naar 26 aug 2026 13:00
+  function tick() {
+    const diff = new Date('2026-08-26T13:00:00') - new Date();
+    if (diff <= 0) {
+      document.getElementById('cd-d').textContent = '26';
+      document.getElementById('cd-h').textContent = 'AUG';
+      document.getElementById('cd-m').textContent = 'FW';
+      document.getElementById('cd-s').textContent = '!!';
+      return;
+    }
+    const pad = n => String(n).padStart(2,'0');
+    document.getElementById('cd-d').textContent = pad(Math.floor(diff/86400000));
+    document.getElementById('cd-h').textContent = pad(Math.floor(diff%86400000/3600000));
+    document.getElementById('cd-m').textContent = pad(Math.floor(diff%3600000/60000));
+    document.getElementById('cd-s').textContent = pad(Math.floor(diff%60000/1000));
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Dag tabs
+  const TABS   = { wo:'tab-wo', do:'tab-do', vr:'tab-vr', za:'tab-za' };
+  const PANELS = { wo:'pw',     do:'pd',     vr:'pv',     za:'pz'     };
+  function showDay(e, day) {
+    document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.day-tab').forEach(t => {
+      t.classList.remove('tab-wo','tab-do','tab-vr','tab-za');
+    });
+    document.getElementById(PANELS[day]).classList.add('active');
+    e.currentTarget.classList.add(TABS[day]);
+  }
+
+  // ===== WEBCAM =====
+  // Zet hier de YouTube-link van de webcamstream. Laat leeg tot die er is.
+  var WEBCAM_URL = '';
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var a = document.getElementById('camLink');
+    var t = document.getElementById('camLinkText');
+    if (!a) return;
+    if (WEBCAM_URL) {
+      a.href = WEBCAM_URL;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    } else {
+      if (t) t.textContent = 'Binnenkort beschikbaar';
+      a.style.opacity = '0.65';
+      a.style.pointerEvents = 'none';
+      a.removeAttribute('href');
+    }
+  });
+
+  // Routeplanner: opent Google Maps met het ingevulde vertrekpunt
+  function planRoute(e) {
+    e.preventDefault();
+    var veld = document.getElementById('routeVan');
+    var van = (veld.value || '').trim();
+    if (!van) { veld.focus(); return; }
+    var naar = 'Wilhelminaplein, 2671 GR Naaldwijk';
+    var url = 'https://www.google.com/maps/dir/?api=1' +
+              '&origin=' + encodeURIComponent(van) +
+              '&destination=' + encodeURIComponent(naar) +
+              '&travelmode=driving';
+    window.open(url, '_blank', 'noopener');
+  }
+
+  // ===== Move For Fun video =====
+  // YouTube weigert embeds die vanaf een lokaal bestand (file://) geladen worden:
+  // er wordt dan geen geldige herkomst meegestuurd, wat fout 153 oplevert.
+  // Daarom: online = speler die automatisch start, lokaal = klikbare thumbnail.
+  var LOKAAL = (location.protocol === 'file:');
+
+  function speelVideo(wrap) {
+    if (!wrap || wrap.querySelector('iframe')) return;
+    var vid = wrap.getAttribute('data-vid');
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube.com/embed/' + vid +
+            '?autoplay=1&mute=1&loop=1&playlist=' + vid +
+            '&playsinline=1&rel=0&modestbranding=1';
+    f.title = 'Move For Fun';
+    f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    f.setAttribute('frameborder', '0');
+    f.setAttribute('allowfullscreen', '');
+    wrap.innerHTML = '';
+    wrap.appendChild(f);
+  }
+
+  function toonThumbnail(wrap) {
+    var vid = wrap.getAttribute('data-vid');
+    var a = document.createElement('a');
+    a.className = 'video-facade';
+    a.href = 'https://youtu.be/' + vid;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.setAttribute('aria-label', 'Bekijk de Move For Fun video op YouTube');
+    a.innerHTML =
+      '<img src="https://i.ytimg.com/vi/' + vid + '/maxresdefault.jpg" alt="Move For Fun" ' +
+      'onerror="this.src=\'https://i.ytimg.com/vi/' + vid + '/hqdefault.jpg\'">' +
+      '<span class="video-play"><svg viewBox="0 0 24 24"><polygon points="6,3 21,12 6,21"></polygon></svg></span>';
+    wrap.innerHTML = '';
+    wrap.appendChild(a);
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var wrap = document.getElementById('mffWrap');
+    if (!wrap) return;
+    var note = document.querySelector('.kids-video-note');
+
+    if (LOKAAL) {
+      toonThumbnail(wrap);
+      if (note) note.innerHTML =
+        'Klik om de video op YouTube te bekijken. ' +
+        '<small style="display:block;margin-top:4px;opacity:0.7">' +
+        'Zodra de site online staat speelt hij hier automatisch af.</small>';
+      return;
+    }
+    // Online: laden zodra de sectie in beeld komt
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { speelVideo(wrap); io.disconnect(); }
+        });
+      }, { rootMargin: '300px' });
+      io.observe(wrap);
+    } else {
+      speelVideo(wrap);
+    }
+  });
+
+  // Plattegrond lightbox
+  function openMap() {
+    var lb = document.getElementById('mapLightbox');
+    if (!lb) return;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMap() {
+    var lb = document.getElementById('mapLightbox');
+    if (!lb) return;
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function (e) {
+    if (e.target.closest && e.target.closest('.map-frame')) openMap();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMap();
+  });
+
+  // Navbar schaduw bij scrollen
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').style.boxShadow =
+      window.scrollY > 50 ? '0 4px 28px rgba(0,0,0,0.55)' : 'none';
+  });
+</script>
+<!-- Lightbox plattegrond -->
+<div class="map-lightbox" id="mapLightbox" onclick="closeMap()">
+  <button class="map-lightbox-close" onclick="closeMap()" aria-label="Sluiten">&times;</button>
+  <img src="fotos/festivalplattegrond.jpg" alt="Festivalplattegrond Wilhelminaplein Naaldwijk">
+</div>
+</body>
+</html>
