@@ -906,10 +906,12 @@
       text-transform: uppercase; color: var(--dark); line-height: 1.15; margin-bottom: 10px;
     }
     .travel-head p { font-size: 14px; line-height: 1.7; color: var(--gray); }
-    .travel-grid { display: grid; gap: 18px; grid-template-columns: 1.25fr 1fr 1fr; align-items: start; }
+    /* Drie gelijke kolommen, even hoog */
+    .travel-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); align-items: stretch; }
     .travel-card {
       position: relative; background: white; border: 1px solid var(--border);
       border-radius: 14px; padding: 26px 24px;
+      display: flex; flex-direction: column;
       transition: box-shadow 0.22s, border-color 0.22s, transform 0.22s;
     }
     .travel-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.07); transform: translateY(-3px); }
@@ -935,7 +937,8 @@
     .travel-card > p { font-size: 13.5px; line-height: 1.72; color: var(--gray); }
     .travel-card strong { color: var(--dark); font-weight: 700; }
     .travel-note {
-      margin-top: 14px; padding-top: 13px; border-top: 1px dashed var(--border);
+      /* auto duwt de slotregel naar de onderkant, zodat de drie kaarten uitlijnen */
+      margin-top: auto; padding-top: 13px; border-top: 1px dashed var(--border);
       font-size: 11.5px; color: var(--muted); line-height: 1.6;
     }
     .travel-ul { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 7px; }
