@@ -196,6 +196,31 @@
       border-radius: 10px; padding: 14px 18px; min-width: 84px;
     }
     .cd-label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 2px; color: var(--cream); text-transform: uppercase; margin-top: 7px; }
+    /* Bijschrift boven de aftelling */
+    .cd-intro {
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 11px; letter-spacing: 2.4px; text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 14px;
+      display: inline-flex; align-items: center; gap: 9px;
+    }
+    .cd-intro.is-live { color: rgba(255,255,255,0.9); }
+    .cd-intro.is-slot {
+      font-size: 14px; letter-spacing: 1px; text-transform: none;
+      color: var(--cream); margin-bottom: 32px;
+    }
+    /* Knipperend stipje tijdens de feestweek */
+    .cd-live {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #E8404A; flex-shrink: 0;
+      box-shadow: 0 0 0 0 rgba(232,64,74,0.6);
+      animation: cdPulse 1.6s ease-out infinite;
+    }
+    @keyframes cdPulse {
+      0%   { box-shadow: 0 0 0 0 rgba(232,64,74,0.55); }
+      70%  { box-shadow: 0 0 0 9px rgba(232,64,74,0); }
+      100% { box-shadow: 0 0 0 0 rgba(232,64,74,0); }
+    }
 
     .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn {
@@ -1380,6 +1405,7 @@
     <div class="hero-date-pill">26 t/m 29 Augustus 2026</div>
     <p class="hero-place">Gezellig &nbsp;·&nbsp; Westlands &nbsp;·&nbsp; Feesten</p>
 
+    <p class="cd-intro" id="cdIntro">Nog even geduld</p>
     <div class="countdown">
       <div class="cd-item"><span class="cd-val" id="cd-d">--</span><span class="cd-label">Dagen</span></div>
       <div class="cd-item"><span class="cd-val" id="cd-h">--</span><span class="cd-label">Uren</span></div>
@@ -2329,21 +2355,46 @@
     document.getElementById('navLinks').classList.remove('open');
   }));
 
-  // Countdown naar 26 aug 2026 13:00
+  // ===== Aftelling in drie fasen =====
+  //  1. vóór de feestweek      -> aftellen naar de opening
+  //  2. tijdens de feestweek   -> aftellen naar het einde (za nacht 01:00)
+  //  3. daarna                 -> afsluitende boodschap
+  var FW_START = new Date('2026-08-26T13:00:00');
+  var FW_EIND  = new Date('2026-08-30T01:00:00');  // zaterdagnacht 01:00 uur
+
   function tick() {
-    const diff = new Date('2026-08-26T13:00:00') - new Date();
-    if (diff <= 0) {
-      document.getElementById('cd-d').textContent = '26';
-      document.getElementById('cd-h').textContent = 'AUG';
-      document.getElementById('cd-m').textContent = 'FW';
-      document.getElementById('cd-s').textContent = '!!';
+    var nu = new Date();
+    var intro = document.getElementById('cdIntro');
+    var cd    = document.querySelector('.countdown');
+    var pad   = function (n) { return String(n).padStart(2, '0'); };
+
+    function toon(ms) {
+      document.getElementById('cd-d').textContent = pad(Math.floor(ms / 86400000));
+      document.getElementById('cd-h').textContent = pad(Math.floor(ms % 86400000 / 3600000));
+      document.getElementById('cd-m').textContent = pad(Math.floor(ms % 3600000 / 60000));
+      document.getElementById('cd-s').textContent = pad(Math.floor(ms % 60000 / 1000));
+    }
+
+    if (nu < FW_START) {                       // fase 1
+      if (intro) intro.textContent = 'Nog even geduld — de Feestweek begint over';
+      toon(FW_START - nu);
       return;
     }
-    const pad = n => String(n).padStart(2,'0');
-    document.getElementById('cd-d').textContent = pad(Math.floor(diff/86400000));
-    document.getElementById('cd-h').textContent = pad(Math.floor(diff%86400000/3600000));
-    document.getElementById('cd-m').textContent = pad(Math.floor(diff%3600000/60000));
-    document.getElementById('cd-s').textContent = pad(Math.floor(diff%60000/1000));
+    if (nu < FW_EIND) {                        // fase 2
+      if (intro) {
+        intro.innerHTML = '<span class="cd-live"></span>De Feestweek is bezig — nog';
+        intro.classList.add('is-live');
+      }
+      toon(FW_EIND - nu);
+      return;
+    }
+    // fase 3
+    if (cd) cd.style.display = 'none';
+    if (intro) {
+      intro.textContent = 'Bedankt voor een geweldige Feestweek — tot volgend jaar!';
+      intro.classList.remove('is-live');
+      intro.classList.add('is-slot');
+    }
   }
   tick(); setInterval(tick, 1000);
 
