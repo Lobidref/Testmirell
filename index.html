@@ -1490,10 +1490,10 @@
       <svg viewBox="0 0 24 24"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>
     </span>
     <div class="melding-txt">
-      <strong>Plein tijdelijk gesloten</strong>
-      <p>Vanwege extreme drukte is het Wilhelminaplein op dit moment tijdelijk
-         gesloten. Zodra het plein weer wordt vrijgegeven gaat het feest verder —
-         houd onze socials in de gaten.</p>
+      <strong>Vanavond gesloten voor nieuwe bezoekers</strong>
+      <p>Vanwege de grote drukte laten we vandaag geen nieuwe bezoekers meer toe
+         op het Wilhelminaplein. Ben je er al bij? Dan kun je gewoon blijven.
+         Morgen zijn we er weer — we zien je graag!</p>
     </div>
     <button class="melding-sluit" onclick="sluitMelding()" aria-label="Melding sluiten">&times;</button>
   </div>
@@ -2504,8 +2504,10 @@
   }));
 
   // ===== MELDING BOVENAAN =====
-  // Zet op false zodra het plein weer open is.
+  // De melding verdwijnt vanzelf op het onderstaande tijdstip.
+  // Eerder weghalen? Zet MELDING_ACTIEF op false.
   var MELDING_ACTIEF = true;
+  var MELDING_TOT    = new Date('2026-08-29T06:00:00');
 
   function meldingHoogte() {
     var el = document.getElementById('melding');
@@ -2520,7 +2522,7 @@
   (function () {
     var el = document.getElementById('melding');
     if (!el) return;
-    if (!MELDING_ACTIEF) { el.remove(); return; }
+    if (!MELDING_ACTIEF || new Date() >= MELDING_TOT) { el.remove(); return; }
     el.hidden = false;
     meldingHoogte();
     window.addEventListener('resize', meldingHoogte);
