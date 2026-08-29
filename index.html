@@ -407,23 +407,39 @@
       position: absolute; inset: 0;
       width: 100%; height: 100%; object-fit: cover; display: block;
     }
-    .recap-geluid {
-      position: absolute; right: 14px; bottom: 14px; z-index: 2;
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 9px 15px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.28);
-      background: rgba(15,15,15,0.55); color: white; cursor: pointer;
-      font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 11.5px;
-      letter-spacing: 0.6px;
-      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-      transition: background 0.2s, border-color 0.2s;
+    /* Afspeelknop over de posterafbeelding */
+    .recap-start {
+      position: absolute; inset: 0; z-index: 2;
+      width: 100%; height: 100%; padding: 0; border: none;
+      background: transparent; cursor: pointer;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 14px;
+      transition: background 0.3s;
     }
-    .recap-geluid:hover { background: rgba(15,15,15,0.8); border-color: rgba(255,255,255,0.5); }
-    .recap-geluid svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .recap-start:hover { background: rgba(0,0,0,0.18); }
+    .recap-play {
+      width: 74px; height: 74px; border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 34px rgba(0,0,0,0.42);
+      transition: transform 0.24s, box-shadow 0.24s;
+    }
+    .recap-start:hover .recap-play {
+      transform: scale(1.1);
+      box-shadow: 0 16px 44px rgba(0,0,0,0.55);
+    }
+    .recap-play svg { width: 28px; height: 28px; fill: var(--lime-d); margin-left: 5px; }
+    .recap-start span {
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 12px; letter-spacing: 1.8px; text-transform: uppercase;
+      color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
     @media (max-width: 768px) {
       .recap-inner { padding: 44px 18px 48px; }
       .recap-head { margin-bottom: 20px; }
       .recap-frame { border-radius: 12px; }
-      .recap-geluid { right: 10px; bottom: 10px; padding: 8px 13px; font-size: 11px; }
+      .recap-play { width: 60px; height: 60px; }
+      .recap-play svg { width: 23px; height: 23px; }
     }
 
     /* ====== NIEUWS ====== */
@@ -1644,14 +1660,16 @@
       <video id="recapVideo"
              poster="video/feestweek-2026-poster.jpg"
              preload="none"
-             muted loop playsinline
+             playsinline controls
              aria-label="Sfeerbeelden van de eerste dagen van Feestweek Naaldwijk 2026">
         <source src="video/feestweek-2026-eerste-dagen.mp4" type="video/mp4">
       </video>
-      <button class="recap-geluid" id="recapGeluid" onclick="recapGeluid()">
-        <svg id="recapIcoonUit" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
-        <svg id="recapIcoonAan" viewBox="0 0 24 24" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.5 8.5a5 5 0 010 7"/><path d="M18.5 5.5a9 9 0 010 13"/></svg>
-        <span id="recapGeluidTekst">Geluid aan</span>
+      <button class="recap-start" id="recapStart" onclick="startRecap()"
+              aria-label="Speel de video af">
+        <span class="recap-play">
+          <svg viewBox="0 0 24 24"><polygon points="6,3 21,12 6,21"></polygon></svg>
+        </span>
+        <span>Bekijk de video</span>
       </button>
     </div>
   </div>
@@ -2573,32 +2591,19 @@
   }));
 
   // ===== RECAP-VIDEO =====
-  // Speelt gedempt af zodra hij in beeld komt; pauzeert weer als je wegscrollt.
-  function recapGeluid() {
+  // Laadt pas bij een klik: scheelt ruim 22 MB dataverkeer per bezoeker
+  // die de video niet bekijkt.
+  function startRecap() {
     var v = document.getElementById('recapVideo');
+    var k = document.getElementById('recapStart');
     if (!v) return;
-    v.muted = !v.muted;
-    if (!v.muted) v.play().catch(function(){});
-    document.getElementById('recapIcoonUit').style.display = v.muted ? '' : 'none';
-    document.getElementById('recapIcoonAan').style.display = v.muted ? 'none' : '';
-    document.getElementById('recapGeluidTekst').textContent = v.muted ? 'Geluid aan' : 'Geluid uit';
+    v.preload = 'auto';
+    v.play().then(function () {
+      if (k) k.remove();
+    }).catch(function () {
+      if (k) k.remove();
+    });
   }
-  document.addEventListener('DOMContentLoaded', function () {
-    var v = document.getElementById('recapVideo');
-    if (!v) return;
-    if (!('IntersectionObserver' in window)) { v.preload = 'auto'; v.play().catch(function(){}); return; }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          v.preload = 'auto';
-          v.play().catch(function(){});
-        } else if (!v.paused) {
-          v.pause();
-        }
-      });
-    }, { threshold: 0.25 });
-    io.observe(v);
-  });
 
   // ===== MELDING BOVENAAN =====
   // De melding verdwijnt vanzelf op het onderstaande tijdstip.
